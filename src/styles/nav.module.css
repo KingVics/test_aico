@@ -1,0 +1,109 @@
+.navContainer {
+    background-color: #ffffff;
+    /* position: fixed;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%; 
+    margin: auto;
+    top: 0;
+
+    position: fixed;
+    top: 0; */
+    position: -webkit-sticky;
+    position: sticky;
+    top: -75px;
+}
+
+
+.navSocial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 4em 0;
+    padding-bottom: .5em;
+}
+
+.navSocial img {
+    width: 60px;
+}
+
+.navSocial svg {
+    font-size: 1.25em;
+    color: var(--buttonColor)
+}
+
+.navSocial > div a:nth-child(2) {
+    margin: 0 2em;
+}
+
+.navLink {
+    height: 60px;
+    background-color: var(--navColor);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px
+    
+}
+
+.navLink li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+    padding: 0 0.6em;
+    transition: var(--mainTransition);
+}
+
+.navLink li a {
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+
+.counselMenu {
+    display: none;
+}
+
+.navLink li:hover {
+    background-color: var(--buttonColor);
+}
+.navLink li:hover .counselMenu {
+    display: block;
+    z-index: 999;
+    background-color: var(--buttonColor);
+}
+
+.counselMenu {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    /* z-index: 999; */
+    width: 200px;
+    height: fit-content;
+    background-color: var(--buttonColor) !important;
+}
+
+.counselMenu div {
+    padding: 10px;
+    transition: var(--mainTransition);
+}
+.counselMenu div:hover {
+    background-color: var(--navColor);
+}
+
+.practiceMenu {
+    width: 340px !important;
+}
+
+
+
+
+
+
+

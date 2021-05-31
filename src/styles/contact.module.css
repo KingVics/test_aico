@@ -1,0 +1,100 @@
+.contactUsContainer{
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+.contactus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+.contactUsContainer hr {
+    border-style: none;
+    border-top: 3px dotted #eeeeee;
+    width: 30%;
+    margin: 0 auto;
+}
+.contactus h1{
+    color: var(--textColor);
+}
+
+.adressContainer{
+    padding: 3em 4em 0;    
+}
+
+.adressContainer p{
+    font-size: 1em;
+}
+
+.abujaAddress p:first-child,
+.kadunaAddress p:first-child,
+.lagosAddress p:first-child {
+    color: #999999;
+    font-weight: 500;
+
+}
+
+.abujaAddress p:nth-child(2),
+.kadunaAddress p:nth-child(2),
+.lagosAddress p:nth-child(2) {
+    margin: 0;
+}
+
+
+.mapContainer {
+    margin: 4em 0;
+}
+
+
+.contactForm {
+    background: #E8E9E1;
+    padding-bottom: 4em;
+}
+
+.contactForm h2,
+.contactForm p {
+    text-align: center;
+}
+
+.contactForm h2 {
+    color: var(--textColor);
+    padding-top: 1.5em;
+    text-transform: uppercase;
+}
+
+.contactForm p {
+    color: rgba(51, 51, 51, 0.7);
+    font-weight: 600;
+    font-size: 1em
+}
+
+.contactForm form {
+    background-color: #fff;
+    width: 80%;
+    margin: 3em auto 0;
+    padding: 4em;
+}
+
+.contactForm form  div {
+    display: flex;
+}
+
+.contactForm form div:first-child,
+.contactForm form div:nth-child(2) {
+    margin-bottom: 1em;
+}
+
+
+.contactForm form div:first-child div:first-child,
+.contactForm form div:nth-child(2) div:first-child,
+.contactText div:last-child {
+    margin-right: 20px;
+}
+
+.contactText {
+    display: flex;
+    flex-direction: row-reverse;
+}

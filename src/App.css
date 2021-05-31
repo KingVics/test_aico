@@ -1,0 +1,59 @@
+:root {
+    --navColor: #10146B;
+    --buttonColor: #D9CB39;
+    --textColor: #111353;
+    --footerBig: #171A24;
+    --footerSmall: #7E91AD;
+    --mainTransition: 0.35s linear;
+    --lineHeight: 2;
+    --buttonBordersize: 0.125em;
+    --color-primary: white;
+    --color-secondary: black;
+    --color-tertiary: dodgerblue;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --space: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+
+h1, h2, h3, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 3em !important;
+}
+
+h2 {
+    font-size: 2em !important;
+}
+
+h3 {
+    font-size: 1.45em !important;
+}
+
+h5 {
+    font-size: 1.3em !important;
+}
+
+h6 {
+    font-size: 1em !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* main {
+    margin-top: 140px;
+} */
+
+/* .carousel-inner {
+    height: 100%;
+} */

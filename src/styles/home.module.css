@@ -1,0 +1,122 @@
+.homeContainer {
+    width: 100%;
+}
+
+.homeCarousel {
+    height: fit-content;
+}
+
+.ourPhilosophy {
+    background: #FAFAF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 4em 3em;
+}
+
+.ourPhilosophy h1 {
+    color: var(--textColor);
+    margin-bottom: .3em;
+}
+
+.ourPhilosophy p {
+    text-align: center;
+    margin: 0;
+    line-height: var(--lineHeight);
+    width: 80%;
+}
+
+.whyChooseUs {
+    background-color: #fff;
+    padding: 4em ;
+}
+
+.whyChooseUs h2 {
+    color:  var(--textColor);
+    font-weight: 700;
+}
+
+.whyChooseUs p {
+    margin-top: 0.25em;
+    line-height: var(--lineHeight)
+}
+
+
+.whyChooseUsCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    margin-top: 2em;
+}
+
+.whyChooseUsCardContainer div {
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0px 3.20642px 12.8257px rgba(16, 20, 107, 0.05);
+    padding: 1.5em;
+    transition: var(--mainTransition);
+    border-radius: 0.8em;
+}
+
+.whyChooseUsCardContainer div:hover {
+    box-shadow: 0px 3.20642px 12.8257px rgba(16, 20, 107, 0.17);
+}
+
+/* .whyChooseUsCardContainer div:nth-child(2) {
+    margin: 0 .97em;
+} */
+
+.whyChooseUsCardContainer h5 {
+    margin-top: .85em;
+}
+
+.practiceArea {
+    background: #FAFAF9;
+    padding: 5em 4em 3em;
+}
+
+.practiceArea h2 {
+    color:  var(--textColor);
+    font-weight: 700;
+}
+
+.practiceAreaCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+    margin-top: 3rem;
+}
+
+.practiceAreaCard {
+    background: #F8F7F2;
+    width: auto;
+    height: 200px;
+    padding: 1em;
+    transition: var(--mainTransition);
+}
+
+.practiceAreaCard:hover {
+    box-shadow:  0 2px 3px #ccc;
+}
+
+.practiceAreaCard h6 {
+    color: var(--navColor);
+}
+
+.practiceAreaCard p {
+    margin: 0;
+    width: 100%;
+    text-overflow: ellipsis;
+}
+
+.practiceAreaCard div:last-child{
+    margin-top: 13px;
+}
+
+.practiceAreaCard div:last-child a {
+    color: var(--navColor);
+    font-size: .8em;
+}
