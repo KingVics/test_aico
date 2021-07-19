@@ -2,12 +2,85 @@
     width: 100%;
 }
 
+.homeContainer h2 {
+    color: var(--textColor);
+    font-size: 3em !important;
+    font-weight: 600;
+}
+
+.homeContainer h5 {
+    font-weight: 600;
+    color: var(--textColor);
+}
+
 .homeCarousel {
+    background: rgba(0, 0, 0, 0.2); /* Black see-through */
     height: fit-content;
 }
 
+.aboutAbu {
+    margin: 4em 4em;
+}
+
+.aboutBrief {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutBrief > div:first-child h2 {
+    width: 75%;
+    margin: 0 auto
+}
+
+.aboutBrief > div:first-child p {
+    color: var(--textColor);
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 2em;
+    line-height: 2;
+}
+
+.practiceBrief  {
+    margin: 6em 7em 5em;
+    position: relative;
+}
+
+.practiceBrief h2 {
+    margin-bottom: 1.1em;
+}
+
+.practiceBriefCard {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 1em .9em;
+    height: 250px;
+}
+
+.practiceBriefCard > div:first-child {
+    padding: 2em .6em;
+}
+
+.practiceBriefCard div{
+    padding: 0 .6em 1em
+}
+
+.practiceBriefCard > div:last-child  h5{
+    margin-bottom: 1em;
+}
+
+.practiceBriefCard > div:last-child  p{
+    color: var(--textColor);
+}
+
+.practiceAreaMore {
+    position: absolute;
+    right: -61px;
+    bottom: -6px;
+}
+
 .ourPhilosophy {
-    background: #FAFAF9;
+    background: #F8F7F2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,108 +88,132 @@
     padding: 5em 4em 3em;
 }
 
-.ourPhilosophy h1 {
-    color: var(--textColor);
-    margin-bottom: .3em;
+.ourPhilosophy h2 {
+    margin-bottom: .5em;
 }
 
 .ourPhilosophy p {
     text-align: center;
     margin: 0;
     line-height: var(--lineHeight);
-    width: 80%;
+    width: 50%;
 }
 
-.whyChooseUs {
-    background-color: #fff;
-    padding: 4em ;
+.meetCounselBrief {
+    margin: 4em 7em 5em;
+    position: relative;
 }
 
-.whyChooseUs h2 {
-    color:  var(--textColor);
-    font-weight: 700;
+.meetCounselBrief > div:first-child {
+    margin-bottom: 4em;
 }
 
-.whyChooseUs p {
-    margin-top: 0.25em;
-    line-height: var(--lineHeight)
-}
-
-
-.whyChooseUsCardContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 2rem;
+.meetCounselBriefName {
     margin-top: 2em;
 }
 
-.whyChooseUsCardContainer div {
-    width: fit-content;
-    height: fit-content;
-    box-shadow: 0px 3.20642px 12.8257px rgba(16, 20, 107, 0.05);
-    padding: 1.5em;
-    transition: var(--mainTransition);
-    border-radius: 0.8em;
+.meetCounselBriefName h5 {
+    font-size: 1.6em !important
 }
 
-.whyChooseUsCardContainer div:hover {
-    box-shadow: 0px 3.20642px 12.8257px rgba(16, 20, 107, 0.17);
+.meetCounselBriefName p {
+    color: var(--textColor);
 }
 
-/* .whyChooseUsCardContainer div:nth-child(2) {
-    margin: 0 .97em;
-} */
-
-.whyChooseUsCardContainer h5 {
-    margin-top: .85em;
-}
-
-.practiceArea {
-    background: #FAFAF9;
-    padding: 5em 4em 3em;
-}
-
-.practiceArea h2 {
-    color:  var(--textColor);
-    font-weight: 700;
-}
-
-.practiceAreaCardContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 2rem;
-    margin-top: 3rem;
-}
-
-.practiceAreaCard {
-    background: #F8F7F2;
-    width: auto;
-    height: 200px;
-    padding: 1em;
-    transition: var(--mainTransition);
-}
-
-.practiceAreaCard:hover {
-    box-shadow:  0 2px 3px #ccc;
-}
-
-.practiceAreaCard h6 {
-    color: var(--navColor);
-}
-
-.practiceAreaCard p {
+.meetCounselBriefMore {
+    position: absolute;
+    right: -70px;
+    bottom: 16px;
     margin: 0;
-    width: 100%;
-    text-overflow: ellipsis;
 }
 
-.practiceAreaCard div:last-child{
-    margin-top: 13px;
+
+@media screen and (max-width: 600px) {
+    .homeContainer h2 {
+        font-size: 1.5em !important;
+        font-weight: 600;
+    }
+
+    .aboutBrief > div:first-child h2 {
+        width: 100%;
+    }
+
+    .aboutBrief > div:first-child p {
+        width: 100%;
+        margin: 2em auto;
+    }
+
+    .aboutBrief > div:last-child img {
+        width: 100%;
+    }
+
+    .practiceBriefCard> div:last-child h5 {
+        font-size: 14px !important;
+        text-align: center;
+        margin: 0;
+    }
+    .practiceBriefCard > div:last-child p {
+        margin: 10px 0 0;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .practiceBriefCard > div:first-child {
+        padding: 20px 10px;
+    }
+
+    .meetCounselBriefName h5 {
+        font-size: 1.1em !important;
+    }
 }
 
-.practiceAreaCard div:last-child a {
-    color: var(--navColor);
-    font-size: .8em;
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .aboutBrief > div:first-child h2 {
+        width: 80%;
+    }
+
+    .aboutBrief > div:first-child p {
+        width: 70%;
+        margin: 2em auto;
+    }
+
+    .aboutBrief > div:last-child img {
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width: 1024px) {
+    .aboutBrief {
+        display: block;
+    }
+    .aboutBrief > div:first-child h2 {
+        text-align: center;
+    }
+
+    .aboutBrief > div:last-child,
+    .meetCounselBrief h2  {
+        text-align: center;
+    }
+
+    .practiceBrief h2 {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .ourPhilosophy p {
+        width: 100%;
+    }
+
+    .meetCounselBriefImg img{
+        width: 90%;
+    }
+
+    .meetCounselBrief > div {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .homeContainer h2 {
+        font-size: 1em !important;
+    }
 }

@@ -38,7 +38,6 @@ function Counsel() {
         history.push('/trainees')
     }
 
-    console.log(counsel);
     if(!counsel) {
         return (
             <NotFound 
@@ -63,7 +62,8 @@ function Counsel() {
                             pic_url={item.pic_url}
                             name={item.name}
                             biography={item.biography}
-                            key={item.id}
+                            key={item.counsel_id}
+                            id={item.counsel_id}
                         />
 
                     ))}

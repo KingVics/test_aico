@@ -1,0 +1,29 @@
+.drawerCounsels,
+.drawerParctice,
+.drawerEvent {
+    position: relative;
+}
+
+
+.drawerCounsels div:last-child {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.drawerCounsels div:last-child a,
+.drawerParctice div:last-child a,
+.drawerEvent div:last-child a{
+    padding-left: 3em !important;
+    font-size: 11px;
+}
+
+.drawerCounselsSvg  {
+    position: absolute;
+    top: 18px;
+    left: 41%;
+}
+
+.drawerCounselsSvg svg {
+    font-size: 18px !important;
+    color: var(--textColor);
+}

@@ -24,7 +24,6 @@ export default function Partners() {
     setTimeout(() => {
         setIsLoading(false)
     }, 5000)
-    console.log(counsel);
 
     useEffect(() => {
         let button = document.getElementById('partner')
@@ -74,7 +73,8 @@ export default function Partners() {
                             pic_url={item.pic_url}
                             name={item.name}
                             biography={item.biography}
-                            key={item.id}
+                            key={item.partner_id}
+                            id={item.partner_id}
                         />
 
                     ))}

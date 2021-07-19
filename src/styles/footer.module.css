@@ -61,3 +61,18 @@
     color: #fff;
     font-size: 0.8em;
 }
+
+@media screen and (max-width: 650px) {
+    .footerBig {
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .footerAdress {
+        text-align: center;
+    }
+    .footerAdress > div {
+        display: block;
+    }
+
+}
