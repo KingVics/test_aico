@@ -161,16 +161,6 @@ a {
 }
 
 
-
-.not-wrap {
-    transform: translate3d(0%, 0px, 0px);
-    transition: all 0.7s ease 0s !important;
-}
-
-.page-wrap {
-    transform: translate3d(-30%, 0px, 0px);
-    transition: all 0.7s ease 0s !important;
-}
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: var(--buttonColor) !important;

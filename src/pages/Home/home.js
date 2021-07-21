@@ -4,6 +4,8 @@ import {BsArrowRight} from "react-icons/bs"
 import style from "../../styles/home.module.css"
 import About from "../../../src/images/about.png"
 
+import 'react-multi-carousel/lib/styles.css';
+
 
 //Component
 import Carousel from "../../components/carousel"

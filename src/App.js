@@ -21,6 +21,7 @@ import About from "./pages/aboutus"
 import Profile from "./pages/Profile/profile"
 
 import './App.css';
+import style from "./styles/drawer.module.css"
 
 
 function App() {
@@ -85,7 +86,7 @@ function App() {
       <Switch>
         <Scroll>
           <div id="outer-container">
-            <main className={open === true ? "page-wrap" : "not-wrap"} >
+            <main className={open === true ? "" : ""}>
               <Route exact path="/" component={() => <Home />}/>
               <Route exact path="/counsel" component={() => <Counsel />}/>
               <Route exact path="/partners" component={() => <Partners />}/>

@@ -140,8 +140,8 @@ const Nav = ({open, handleOpen, setOpen}) => {
                     <Link to="/contact">contact us</Link>
                 </li>
             </ul>
-            <div className={ notHome ? `${style.linkChange}`: `${style.hamburgerMenu} `}>
-                <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } />
+            <div className={ notHome ? ` ${style.hamburgerMenu} ${style.linkChange}`: `${style.hamburgerMenu} `}>
+                <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "pageWrap" } outerContainerId={ "outer-container" } />
             </div>
         </nav>
     )

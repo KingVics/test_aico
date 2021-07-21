@@ -27,3 +27,13 @@
     font-size: 18px !important;
     color: var(--textColor);
 }
+
+.not-wrap {
+    transform: translate3d(0%, 0px, 0px);
+    transition: all 0.7s ease 0s !important;
+}
+
+.pageWrap {
+    transform: translate3d(-30%, 0px, 0px);
+    transition: all 0.7s ease 0s !important;
+}
