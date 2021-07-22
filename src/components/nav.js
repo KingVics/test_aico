@@ -1,13 +1,29 @@
 import React, {useState, useEffect} from "react"
 import {useLocation} from "react-router-dom"
+import styled from "styled-components"
 import style from "../styles/nav.module.css"
 import { Link } from "react-router-dom"
-import {VscListFlat} from  "react-icons/all"
-import Drawer from "../components/drawer"
+import {FaBars} from "react-icons/fa"
 
+// import {VscListFlat} from  "react-icons/all"
+// import Drawer from "../components/drawer"
 
+const MenuBars = styled(FaBars) `
+    display:  none;
 
-const Nav = ({open, handleOpen, setOpen}) => {
+    @media screen and (max-width: 1024px) {
+        display: block;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 0;
+        transform:  translate(-50%, 25%);
+        color: #fff;
+    }
+`
+
+const Nav = ({ toggle}) => {
     const location = useLocation();
     const [notHome, setNotHome] = useState(false)
     const [active, setActive] = useState(false)
@@ -16,8 +32,20 @@ const Nav = ({open, handleOpen, setOpen}) => {
     const [isOpen, setIsOpen] = useState(false)
     const [isCounsel, setIsCounsel] = useState(false)
     const [openEvent, setOpenEvent] = useState(false)
+    const [checkScroll, setCheckScroll] = useState(false)
+    
 
+    const scrollHandler = () => {
+        if(window.scrollY >= 80) {
+            setCheckScroll(true)
+            
+        } else {
+            setCheckScroll(false)
+            
+        }
+    }
 
+    window.addEventListener('scroll', scrollHandler)
 
     useEffect(() => {
         if(location.pathname !== "/" ) {
@@ -68,7 +96,7 @@ const Nav = ({open, handleOpen, setOpen}) => {
         setOpenEvent(item)
     }
     return (
-        <nav className={`${style.navContainer}`}>
+        <nav className={checkScroll  ? `${style.navContainer} ${style.activeScroll} ${style.activeScollLink}` : `${style.navContainer}`}>
             <div style={{color: "#fff"}}>
                 LOGO
             </div>
@@ -77,7 +105,7 @@ const Nav = ({open, handleOpen, setOpen}) => {
                     <Link to="/">Home</Link>
                 </li>
                 <li className={aboutActive ?  ` ${style.ActiveOther}` : ""}>
-                    <Link to="/about">About us</Link>
+                    <Link to="/about" >About us</Link>
                 </li>
                 <li style={{position: "relative"}} onMouseOver={checkCounsel} onMouseLeave={(item) => setIsCounsel(!item)}>
                     <Link to="#">Counsel</Link>
@@ -141,7 +169,8 @@ const Nav = ({open, handleOpen, setOpen}) => {
                 </li>
             </ul>
             <div className={ notHome ? ` ${style.hamburgerMenu} ${style.linkChange}`: `${style.hamburgerMenu} `}>
-                <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "pageWrap" } outerContainerId={ "outer-container" } />
+                <MenuBars onClick={toggle} />
+                {/* <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "pageWrap" } outerContainerId={ "outer-container" } /> */}
             </div>
         </nav>
     )

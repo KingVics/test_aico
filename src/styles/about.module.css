@@ -103,3 +103,70 @@
     background: var(--buttonColor);
 } 
 
+
+@media screen and (max-width: 1024px) {
+    .aboutImgDiv img {
+        height: 180px;
+    }
+    .bestlawFirm {
+        margin: 2em;
+    }
+    .aboutContainer h2 {
+        font-size: 1.5em !important;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .aboutContainer img {
+        width: 100%;
+    }
+
+    .bestlawFirmP {
+        margin: 2em 1em;
+    }
+
+    .whychooseUs {
+        margin: 2rem;
+    }
+
+    .whychooseUs img {
+        display: none;
+    }
+
+    .whyCol {
+        padding: 0 2em !important;
+    }
+
+    .meetheFounder {
+        margin: 2em;
+    }
+
+    .meetheFounder p {
+        width: 100%;
+        margin: 1em auto 0;
+        line-height: 2;
+    }
+
+    .meetheFounder div > div:first-child img {
+        width: 60%;
+        display: none;
+    }
+
+    .founderCol > div {
+        width: 100%;
+        text-align: center;
+        margin: 2em 0 0;
+    }
+
+    .founderCol div button {
+        width: 60%;
+    }
+
+    .needHelp{
+        display: block;
+        text-align: center;
+        margin: 3em 0;
+    }
+
+    
+}

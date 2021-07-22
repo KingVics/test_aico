@@ -35,6 +35,7 @@ function Contact () {
                             const response  = await data
                             setMessage(response)
                             setShow(true)
+                            setFormData(initiateState)
                         } catch (error) {
                             console.log(error);
                             setShow(true)
@@ -70,8 +71,6 @@ function Contact () {
 
     }
 
-
-    console.log(dispatch.call)
     return(
         <>
         {show && 
@@ -86,7 +85,7 @@ function Contact () {
             <h1>CONTACT US</h1>
             <div className={style.adressContainer}>
                 <Row>
-                    <Col sm={6} md={6} lg={6} xl={4}>
+                    <Col sm={6} md={6} lg={4} xl={4}>
                         <div classname={style.abujaContainer}>
                             <div className={style.mapContainer}>
                                 <svg width="190" height="219" viewBox="0 0 190 219" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +107,7 @@ function Contact () {
                             </div>
                         </div>
                     </Col>
-                    <Col sm={6} md={6} lg={6} xl={4} style={{padding: "0"}} className={style.lagosAddressCol}>
+                    <Col sm={6} md={6} lg={4} xl={4} style={{padding: "0"}} className={style.lagosAddressCol}>
                         <div classname={style.lagosContainer}>
                             <div className={style.mapContainer}>
                                 <svg width="344" height="71" viewBox="0 0 344 71" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +129,7 @@ function Contact () {
                             </div>
                         </div>
                     </Col>
-                    <Col sm={6} md={6} lg={6} xl={4} className={style.kadunaAddressCol}>
+                    <Col sm={6} md={6} lg={4} xl={4} className={style.kadunaAddressCol}>
                         <div classname={style.kadunaContainer}>
                             <div className={style.mapContainer}>
                             <svg width="244" height="224" viewBox="0 0 244 224" fill="none" xmlns="http://www.w3.org/2000/svg">

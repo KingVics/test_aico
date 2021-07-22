@@ -170,6 +170,10 @@
         font-size: 1.7em !important;
     }
 
+    .contactFormMessage > div:last-child {
+        margin-left: 0;
+    }
+
     .adressContainer {
         text-align: center;
         margin: 5em 2em 0;

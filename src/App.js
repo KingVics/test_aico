@@ -10,6 +10,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Nav from "./components/nav"
 import Footer from "./components/footer";
 import Scroll from "./components/scroll"
+import Dropdown from './components/Dropdown';
 
 //Pages
 import Home from "./pages/Home/home"
@@ -21,11 +22,10 @@ import About from "./pages/aboutus"
 import Profile from "./pages/Profile/profile"
 
 import './App.css';
-import style from "./styles/drawer.module.css"
 
 
 function App() {
-  const [open, setOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   const backToTop =() => {
     window.scrollTo({
@@ -73,20 +73,18 @@ function App() {
   );
   }
 
-  const handleOpen = () => {
-    setOpen(false)
-  }
-
+ 
+  const toggle = () => setIsOpen(!isOpen)
 
 
   return (
     <Router>
-      {/* <Nav open={open} handleOpen={handleOpen} setOpen={setOpen} /> */}
-      <Route component={() =><Nav open={open} handleOpen={handleOpen} setOpen={setOpen} />} />
+      <Nav toggle={toggle} />
+      <Dropdown toggle={toggle} isOpen={isOpen}/>
       <Switch>
         <Scroll>
           <div id="outer-container">
-            <main className={open === true ? "" : ""}>
+            <main>
               <Route exact path="/" component={() => <Home />}/>
               <Route exact path="/counsel" component={() => <Counsel />}/>
               <Route exact path="/partners" component={() => <Partners />}/>
