@@ -45,11 +45,8 @@
     border-bottom: 3px solid #fff;   
 }
 
-.ActiveOther a{
-    border-bottom: 3px solid var(--navColor);   
-}
-
-.activeScollLink ul li a{
+.activeScollLink ul li a,
+.activeScollLink svg{
     color: #fff !important;
 }
 
@@ -61,6 +58,10 @@
     border-radius: 2px;
     transition: var(--mainTransition);
     padding: 0;    
+}
+
+.dropDownScroll {
+    background: var(--navColor);
 }
 
 .dropDown {
@@ -83,12 +84,22 @@
     padding:  0 0 0 .7em;
 }
 
-
-
 .dropDown div:hover,
 .dropDownEvent div:hover {
     background: #F2F5FB;
     border-radius: 2px 2px 0px 0px
+}
+
+.dropDownScroll a:hover {
+    color: var(--navColor) !important;
+} 
+
+.ActiveOther > a{
+    border-bottom: 3px solid var(--navColor);   
+}
+
+.ActiveOtherScroll > a {
+    border-bottom: 3px solid #fff !important;  
 }
 
 
@@ -108,9 +119,6 @@
         color: var(--textColor);
     }
 
-    .hamburgerMenu svg {
-        font-size: 35px;
-    }
 
 }
 

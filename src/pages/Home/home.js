@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Row, Col} from "react-bootstrap"
 import {BsArrowRight} from "react-icons/bs"
 import style from "../../styles/home.module.css"
 import About from "../../../src/images/about.png"
+import Aos from "aos"
+import "aos/dist/aos.css"
 
 import 'react-multi-carousel/lib/styles.css';
 
@@ -18,6 +20,9 @@ import CounselTwo from "../../images/com/counsel2.png"
 import CounselThree from "../../images/com/counsel3.png"
 
 export default function Home(props) {
+    useEffect(() => {
+        Aos.init({duration: 3000})
+    },[])
 
     return (
         <div className={style.homeContainer} id="back-to-top-anchor" >
@@ -28,11 +33,11 @@ export default function Home(props) {
                 <Row>
                     <Col>
                         <div className={style.aboutBrief}>
-                            <div>
+                            <div data-aos="slide-right" >
                                 <h2>About Abdullahi Ibrahim & Co</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
                             </div>
-                            <div>
+                            <div data-aos="zoom-in-left" >
                                 <img src={About} alt="" />
                             </div>
                         </div>
@@ -40,10 +45,10 @@ export default function Home(props) {
                 </Row>
             </div>
             <div className={style.practiceBrief}>
-                <h2>Our Practice Area</h2>
-                <CardSlider />
+                <h2 data-aos="zoom-in-right">Our Practice Area</h2>
+                <CardSlider  data-aos="zoom-in-left"/>
             </div>
-            <div className={style.ourPhilosophy}>
+            <div className={style.ourPhilosophy} data-aos="zoom-in">
                 <h2>Our Philosophy</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tortor ut adipiscing tellus elementum lobortis. Risus iaculis ultrices id et rutrum feugiat. 
                     Facilisis viverra ac morbi blandit leo, enim. Amet, ut nulla urna a tristique pretium nunc.
@@ -57,7 +62,7 @@ export default function Home(props) {
                 </div>
                 <Row className={style.meetCounselBriefImg}> 
                     <Col sm={12} xl={4}>
-                        <div>
+                        <div data-aos="fade-left">
                             <div>
                                 <img src={CounselOne} alt="" />
                             </div>
@@ -68,7 +73,7 @@ export default function Home(props) {
                         </div>
                     </Col>
                     <Col sm={12} xl={4}>
-                        <div>
+                        <div data-aos="fade-up">
                             <div>
                                 <img src={CounselTwo} alt="" />
                             </div>
@@ -79,7 +84,7 @@ export default function Home(props) {
                         </div>
                     </Col>
                     <Col sm={12} xl={4}>
-                        <div>
+                        <div data-aos="fade-right">
                             <div>
                                 <img src={CounselThree} alt="" />
                             </div>

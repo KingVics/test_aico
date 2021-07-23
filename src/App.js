@@ -20,12 +20,18 @@ import Trainees from "./pages/trainees"
 import Contact from "./pages/contactus"
 import About from "./pages/aboutus"
 import Profile from "./pages/Profile/profile"
+import PracticeAreaLitigation from "./pages/practiceArea"
 
+
+//Data
+import { PracticePath } from "./data/practiceAreaHome";
 import './App.css';
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+  const newPath = PracticePath.map((item) => item.path)
+
 
   const backToTop =() => {
     window.scrollTo({
@@ -92,6 +98,8 @@ function App() {
               <Route exact path="/contact" component={() => <Contact />}/>
               <Route exact path="/about" component={() => <About />}/>
               <Route exact path="/profile/:id" component={() => <Profile />}/>
+              <Route exact path={newPath} component={PracticeAreaLitigation } />
+              
               {/* <Redirect to="/home" /> */}
             </main>
             <ScrollTop>

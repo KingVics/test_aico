@@ -16,10 +16,10 @@ const MenuBars = styled(FaBars) `
         font-size: 20px;
         cursor: pointer;
         position: absolute;
-        top: 15px;
-        right: 0;
+        top: 25px;
+        right: 10px;
         transform:  translate(-50%, 25%);
-        color: #fff;
+        color: ${({notHome}) => (notHome ? 'var(--textColor)': '')}
     }
 `
 
@@ -29,6 +29,9 @@ const Nav = ({ toggle}) => {
     const [active, setActive] = useState(false)
     const [aboutActive, setAboutActive] = useState(false)
     const [contatcActive, setContactActive] = useState(false)
+    const [counselActive, setCounselActive] = useState(false)
+    const [practiceActive, setPracticeActive] = useState(false)
+    const [eventActive, setEventActive] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
     const [isCounsel, setIsCounsel] = useState(false)
     const [openEvent, setOpenEvent] = useState(false)
@@ -61,6 +64,9 @@ const Nav = ({ toggle}) => {
             setActive(true)
             setAboutActive(false)
             setContactActive(false)
+            setCounselActive(false)
+            setPracticeActive(false)
+            setEventActive(false)
         }
 
     }, [location.pathname])
@@ -70,6 +76,9 @@ const Nav = ({ toggle}) => {
             setAboutActive(true)
             setActive(false)
             setContactActive(false)
+            setCounselActive(false)
+            setPracticeActive(false)
+            setEventActive(false)
         }
 
     }, [location.pathname])
@@ -79,6 +88,45 @@ const Nav = ({ toggle}) => {
             setContactActive(true)
             setAboutActive(false)
             setActive(false)
+            setCounselActive(false)
+            setPracticeActive(false)
+            setEventActive(false)
+        }
+
+    }, [location.pathname])
+
+    useEffect(() => {
+        if(location.pathname === "/partners" || location.pathname === "/counsel" || location.pathname === "/trainees" ) {
+            setCounselActive(true)
+            setContactActive(false)
+            setAboutActive(false)
+            setActive(false)
+            setPracticeActive(false)
+            setEventActive(false)
+        }
+
+    }, [location.pathname])
+
+    useEffect(() => {
+        if(location.pathname === "/aviation" || location.pathname === "/litigation" ) {
+            setPracticeActive(true)
+            setCounselActive(false)
+            setContactActive(false)
+            setAboutActive(false)
+            setActive(false)
+            setEventActive(false)
+        }
+
+    }, [location.pathname])
+
+    useEffect(() => {
+        if(location.pathname === "/publications" || location.pathname === "/news" ) {
+            setPracticeActive(true)
+            setCounselActive(false)
+            setContactActive(false)
+            setAboutActive(false)
+            setActive(false)
+            setEventActive(false)
         }
 
     }, [location.pathname])
@@ -96,7 +144,7 @@ const Nav = ({ toggle}) => {
         setOpenEvent(item)
     }
     return (
-        <nav className={checkScroll  ? `${style.navContainer} ${style.activeScroll} ${style.activeScollLink}` : `${style.navContainer}`}>
+        <nav className={checkScroll  ? `${style.navContainer} ${style.activeScroll} ${style.activeScollLink}` : `${style.navContainer} ${style.navContainer}`}>
             <div style={{color: "#fff"}}>
                 LOGO
             </div>
@@ -104,13 +152,13 @@ const Nav = ({ toggle}) => {
                 <li className={active ?  `${style.Active}` : ""}>
                     <Link to="/">Home</Link>
                 </li>
-                <li className={aboutActive ?  ` ${style.ActiveOther}` : ""}>
+                <li className={ checkScroll && aboutActive ?  ` ${style.ActiveOtherScroll}` : aboutActive ? `${style.ActiveOther}` : ""}>
                     <Link to="/about" >About us</Link>
                 </li>
-                <li style={{position: "relative"}} onMouseOver={checkCounsel} onMouseLeave={(item) => setIsCounsel(!item)}>
+                <li style={{position: "relative"}}  className={checkScroll && counselActive ? ` ${style.ActiveOtherScroll}` : counselActive ? `${style.ActiveOther}` : "" } onMouseOver={checkCounsel} onMouseLeave={(item) => setIsCounsel(!item)}>
                     <Link to="#">Counsel</Link>
                     {isCounsel && 
-                        <div className={style.dropDown}>
+                        <div className={checkScroll ? `${style.dropDown} ${style.dropDownScroll}` : `${style.dropDown}`} onClick={() => setIsCounsel(false)}>
                             <div>
                                 <Link to="/partners">Partner</Link>
                             </div>
@@ -123,52 +171,55 @@ const Nav = ({ toggle}) => {
                         </div>
                     }
                 </li>
-                <li style={{position: "relative"}} onMouseOver={checkOpen} onMouseLeave={(item) => setIsOpen(!item)}>
+                <li style={{position: "relative"}}  className={checkScroll && practiceActive ? ` ${style.ActiveOtherScroll}` : practiceActive ? `${style.ActiveOther}` : "" }  onMouseOver={checkOpen} onMouseLeave={(item) => setIsOpen(!item)}>
                     <Link to="#">practice area</Link>
                     {isOpen && 
-                        <div className={style.dropDown}>
+                        <div className={checkScroll ? `${style.dropDown} ${style.dropDownScroll}` : `${style.dropDown}`} onClick={() => setIsOpen(false)}>
                             <div>
-                                <Link to="#">Litigation</Link>
+                                <Link to="/aviation">Aviation</Link>
                             </div>
                             <div>
-                                <Link to="#">Labour Law</Link>
+                                <Link to="/litigation">Litigation</Link>
+                            </div>
+                            <div>
+                                <Link to="/labour_law">Labour Law</Link>
                             </div>        
                             <div>
-                                <Link to="#">Insurance</Link>
+                                <Link to="/insurance">Insurance</Link>
                             </div>
                             <div>
-                                <Link to="#">Foreign Investments and Privatisation</Link>
+                                <Link to="/foreign_investments">Foreign Investments and Privatisation</Link>
                             </div>
                             <div>
-                                <Link to="#">Intellectual Property</Link>
+                                <Link to="/intellectualproperty">Intellectual Property</Link>
                             </div>
                             <div>
-                                <Link to="#">Taxation</Link>
+                                <Link to="/taxation">Taxation</Link>
                             </div>
                             <div>
-                                <Link to="#">Telecommunication Law</Link>
+                                <Link to="/telecommunication_law">Telecommunication Law</Link>
                             </div>
                         </div>
                     }
                 </li>
-                <li style={{position: "relative"}} onMouseOver={checkOpenEvent} onMouseLeave={(item) => setOpenEvent(!item)}>
+                <li style={{position: "relative"}}   className={checkScroll && eventActive ? ` ${style.ActiveOtherScroll}` : eventActive ? `${style.ActiveOther}` : "" } onMouseOver={checkOpenEvent} onMouseLeave={(item) => setOpenEvent(!item)}>
                     <Link to="#">events</Link>
                     {openEvent && 
-                        <div className={style.dropDownEvent}>
+                        <div className={checkScroll ? `${style.dropDownEvent} ${style.dropDownScroll}` : `${style.dropDownEvent}`}>
                             <div>
-                                <Link to="#">Publications</Link>
+                                <Link to="/publications">Publications</Link>
                             </div>
                             <div>
-                                <Link to="#">News</Link>
+                                <Link to="/news">News</Link>
                             </div>        
                         </div>
                     }
                 </li>
-                <li  className={contatcActive ?  `${style.ActiveOther}` : ""}>
+                <li  className={checkScroll && contatcActive ? `${style.ActiveOtherScroll}` : contatcActive ?  `${style.ActiveOther}` : ""}>
                     <Link to="/contact">contact us</Link>
                 </li>
             </ul>
-            <div className={ notHome ? ` ${style.hamburgerMenu} ${style.linkChange}`: `${style.hamburgerMenu} `}>
+            <div className={ notHome ? ` ${style.hamburgerMenu} ${style.linkChange} `: checkScroll ? `${style.activeScollLink}  ${style.hamburgerMenu}` : `${style.hamburgerMenu} `}>
                 <MenuBars onClick={toggle} />
                 {/* <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "pageWrap" } outerContainerId={ "outer-container" } /> */}
             </div>

@@ -134,6 +134,10 @@
         font-weight: 600;
     }
 
+    .homeCarousel {
+        height: 200px;
+    }
+    
     .aboutBrief > div:first-child h2 {
         width: 100%;
     }

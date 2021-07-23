@@ -94,6 +94,12 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    .MainCarousel .carousel-caption {
+        right: 0;
+        top: initial;
+    }
+    
+    
     .react-multiple-carousel__arrow { 
         top: initial;
         background: #E5E5E5;
