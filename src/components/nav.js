@@ -5,6 +5,8 @@ import style from "../styles/nav.module.css"
 import { Link } from "react-router-dom"
 import {FaBars} from "react-icons/fa"
 
+import Logo from "../images/logorm.png"
+
 // import {VscListFlat} from  "react-icons/all"
 // import Drawer from "../components/drawer"
 
@@ -20,6 +22,20 @@ const MenuBars = styled(FaBars) `
         right: 10px;
         transform:  translate(-50%, 25%);
         color: ${({notHome}) => (notHome ? 'var(--textColor)': '')}
+    }
+`
+
+const HomeLink = styled(Link) `
+
+`
+
+const Image = styled.img `
+    width: 40px;
+    height: 40px;
+
+    @media screen and (min-width: 769px) {
+        width: 60px;
+        height: 60px;
     }
 `
 
@@ -145,8 +161,10 @@ const Nav = ({ toggle}) => {
     }
     return (
         <nav className={checkScroll  ? `${style.navContainer} ${style.activeScroll} ${style.activeScollLink}` : `${style.navContainer} ${style.navContainer}`}>
-            <div style={{color: "#fff"}}>
-                LOGO
+            <div style={{color: "#fff"}} className={checkScroll ? `${style.logoScroll}` : '' }>
+                <HomeLink to="/">
+                    <Image src={Logo} alt="" />
+                </HomeLink>
             </div>
             <ul className={ notHome ? `${style.linkChange} ${style.navLink}  ` : style.navLink}>
                 <li className={active ?  `${style.Active}` : ""}>
