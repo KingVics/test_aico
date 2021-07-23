@@ -46,13 +46,13 @@ const PracticeArea = () => {
             <Section>
                 <Wrapper>
                     <div>
-                        <img src={Litigation.image} alt="" data-aos="zoom-in-right" />
+                        <img src={Litigation.image} alt="" data-aos="zoom-in-right" data-aos-once="true" />
                     </div>
                     <div>
-                        <p data-aos="fade-left">{Litigation.paragraphOne}</p>
-                        <p data-aos="fade-right">{Litigation.paragraphTwo}</p>
-                        <p data-aos="fade-left">{Litigation.paragraphThree}</p>
-                        <p data-aos="fade-right"> {Litigation.paragraphFour}</p>
+                        <p data-aos="fade-left" data-aos-once="true" >{Litigation.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true" >{Litigation.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true" >{Litigation.paragraphThree}</p>
+                        <p data-aos="fade-right" data-aos-once="true" > {Litigation.paragraphFour}</p>
                     </div>
                 </Wrapper>
             </Section>
