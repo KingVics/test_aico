@@ -154,7 +154,7 @@
 .formModal div svg:hover,
 .formModalRed div svg:hover,
 .formModalNormal div svg:hover {
-   color: rgba(0, 0, 0, 0.1)
+    color: rgba(0, 0, 0, 0.1)
 }
 
 @media  screen and (max-width: 580px) {
@@ -165,13 +165,21 @@
         display: block;
     }
 
+    .contactForm h2 {
+        font-size: 1.2em !important;
+    }
+
     .contactUsContainer h1 {
         text-align: center;
-        font-size: 1.7em !important;
+        font-size: 1.3em !important;
     }
 
     .contactFormMessage > div:last-child {
         margin-left: 0;
+    }
+
+    .contactForm form {
+        padding: 2em;
     }
 
     .adressContainer {
@@ -179,8 +187,20 @@
         margin: 5em 2em 0;
     }
 
+    .abujaAddress h3,
+    .lagosAddress h3,
+    .kadunaAddress h3 {
+        font-size: 1.1em !important;
+    }
+
+    .abujaAddress p,
+    .lagosAddress p,
+    .kadunaAddress p {
+        font-size: .9em;
+    }
+
     .contactForm {
-        margin: 0rem 3em;
+        margin: 0rem 1em;
     }
 
     .contactCard {

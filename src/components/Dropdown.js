@@ -18,6 +18,7 @@ const DropdownContainer = styled.div `
     transition: 0.3s ease-in-out;
     opacity: ${({isOpen}) => (isOpen ? '1' : '0')};
     top: ${({isOpen}) => (isOpen ? '0' : '-100%')};
+    overflow-y: auto;
 `
 
 const Icon = styled.div `   
@@ -71,6 +72,10 @@ const DropMenuLinks = styled(Link) `
     &:hover {
         color: #000d1a;
     }
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.1rem;
+    }
 `
 
 const SubDropdownMenu = styled.div `
@@ -104,12 +109,28 @@ const SubDropMenuLinks = styled(Link) `
         color: #000d1a;
     }
 
+    @media screen and (max-width: 768px) {
+        font-size: .9rem;
+    }
+
 `
 
 const Dropdown = ({toggle, isOpen}) => {
     const [show, setShow] = useState(false)
     const [showP, setShowP] = useState(false)
     const [openEvent, setOpenEvent] = useState(false)
+
+
+    const mediaQuery = window.matchMedia('(max-width: 1024px)') 
+
+    useEffect(() => {
+        if (isOpen && mediaQuery.matches) {
+            document.body.style.overflow = 'hidden';
+        }
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [isOpen, mediaQuery]);
 
     const handleCounsel = () => {
         setShow(!show)

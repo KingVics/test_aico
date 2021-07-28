@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
@@ -26,10 +26,15 @@ import PracticeAreaLitigation from "./pages/practiceArea"
 //Data
 import { PracticePath } from "./data/practiceAreaHome";
 import './App.css';
+import News from "./pages/News";
+import NotFound from "./pages/notFound";
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+  const [active, setActive] = useState(true)
+  const [activeP, setActiveP] = useState(false)
+  const  [formData, setFormData] = useState({event: "news"});
   const newPath = PracticePath.map((item) => item.path)
 
 
@@ -81,6 +86,16 @@ function App() {
 
  
   const toggle = () => setIsOpen(!isOpen)
+  const showPublication = () => {
+    setActiveP(true)
+    setActive(false)
+  }
+  const showNew = () => {
+    setActive(true)
+    setActiveP(false)
+  }
+
+  
 
 
   return (
@@ -99,8 +114,9 @@ function App() {
               <Route exact path="/about" component={() => <About />}/>
               <Route exact path="/profile/:id" component={() => <Profile />}/>
               <Route exact path={newPath} component={PracticeAreaLitigation } />
+              <Route exact path="/events" component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
+              <Route path='*' exact={true} component={NotFound} />
               
-              {/* <Redirect to="/home" /> */}
             </main>
             <ScrollTop>
                 <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">

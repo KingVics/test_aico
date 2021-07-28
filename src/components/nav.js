@@ -221,17 +221,17 @@ const Nav = ({ toggle}) => {
                     }
                 </li>
                 <li style={{position: "relative"}}   className={checkScroll && eventActive ? ` ${style.ActiveOtherScroll}` : eventActive ? `${style.ActiveOther}` : "" } onMouseOver={checkOpenEvent} onMouseLeave={(item) => setOpenEvent(!item)}>
-                    <Link to="#">events</Link>
-                    {openEvent && 
+                    <Link to="/events">events</Link>
+                    {/* {openEvent && 
                         <div className={checkScroll ? `${style.dropDownEvent} ${style.dropDownScroll}` : `${style.dropDownEvent}`}>
                             <div>
-                                <Link to="/publications">Publications</Link>
+                                <Link to="/events">Publications</Link>
                             </div>
                             <div>
-                                <Link to="/news">News</Link>
+                                <Link to="/events">News</Link>
                             </div>        
                         </div>
-                    }
+                    } */}
                 </li>
                 <li  className={checkScroll && contatcActive ? `${style.ActiveOtherScroll}` : contatcActive ?  `${style.ActiveOther}` : ""}>
                     <Link to="/contact">contact us</Link>

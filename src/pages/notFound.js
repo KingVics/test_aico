@@ -4,7 +4,8 @@ import "../styles/notFound.css"
 export default function NotFound(props) {
     return (
         <div className="notFound">
-            <h1>No {props.title} found</h1>
+            {props.title ? <h1>404 No {props.title} Found</h1> : 
+            <h1>404 Not Found</h1> }
         </div>
     )
 }

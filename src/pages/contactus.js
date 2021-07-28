@@ -201,7 +201,14 @@ function Contact () {
                                 handleChange={(e) => setFormData({...formData, message: e.target.value })}
                                 value={formData.message}
                             />
-                            <Input name="subject" label="Subject" handleChange={(e) => setFormData({...formData, subject: e.target.value })}autoFocus half placeholder="Subject" multiline />
+                            <Input 
+                                name="subject" 
+                                label="Subject" 
+                                handleChange={(e) => setFormData({...formData, subject: e.target.value })}
+                                half 
+                                placeholder="Subject" 
+                                multiline 
+                            />
                         </div>
                         <div>
                             <Button type="submit">Submit now</Button>

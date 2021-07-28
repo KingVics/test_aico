@@ -1,0 +1,79 @@
+.selects select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #fff;
+    background-image: none;
+}
+  /* Remove IE arrow */
+.selects select::-ms-expand {
+    display: none;
+}
+  /* Custom Select */
+.selects{
+    position: relative;
+    display: flex;
+    line-height: 3;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #A8A8A8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    width: 45%;
+}
+
+.selects select {
+    flex: 1;
+    padding: 0 .5em;
+    cursor: pointer;
+    color: #000;
+    /* background: #FFFFFF;
+    border: 1px solid #A8A8A8;
+    box-sizing: border-box;
+    border-radius: 5px; */
+}
+  /* Arrow */
+.selects::after {
+    content: '\2304';
+    position: absolute;
+    font-size: 25px;
+    top: -28px;
+    right: -13px;
+    padding: 2.2px 1em;
+    background: #fff;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+  /* Transition */
+.selects:hover::after {
+    color: var(--buttonColor);
+}
+
+.select_contianer label{
+    color: rgba(0, 0, 0, 0.53);
+    font-weight: 500;
+}
+
+
+@media screen and (min-width: 321px)and (max-width: 500px) {
+    .selects{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .selects{
+        width: 100%;
+    }
+}
