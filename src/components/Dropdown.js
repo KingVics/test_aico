@@ -217,9 +217,9 @@ const Dropdown = ({toggle, isOpen}) => {
                         </SubDropdownMenu>
                     }
                     <li onClick={handleEvent}>
-                        <DropMenuLinks to="#">Event</DropMenuLinks>
+                        <DropMenuLinks to="/events">Event</DropMenuLinks>
                     </li>
-                    {openEvent && 
+                    {/* {openEvent && 
                         <SubDropdownMenu>
                             <ul onClick={toggle}>
                                 <li>
@@ -230,7 +230,7 @@ const Dropdown = ({toggle, isOpen}) => {
                                 </li>
                             </ul>        
                         </SubDropdownMenu>
-                    }
+                    } */}
                     <li onClick={toggle}>
                         <DropMenuLinks to="/contact">Contact Us</DropMenuLinks>
                     </li>
