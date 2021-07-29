@@ -25,6 +25,11 @@ const Layer = styled.div `
     align-items: flex-start;
     justify-content: center;
     padding: 0 7rem;
+
+    @media screen and (max-width:700px) { 
+        padding: 0 2rem;
+        align-items: center;
+    }
 `
 
 const Page = styled.div `
