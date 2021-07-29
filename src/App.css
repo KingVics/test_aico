@@ -93,6 +93,21 @@ a {
     color: #111353;
 }
 
+.nav-pills .nav-link {
+    border-radius: .25rem;
+    color:  #7578B8;
+    padding: .9em 3px;
+    
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: var(--buttonColor) !important;
+    border-radius: 0;
+}
+
+.nav-item {
+    border-bottom: 1.07937px solid #AFAFAF;
+}
 @media screen and (max-width: 600px) {
     .MainCarousel .carousel-caption {
         right: 0;

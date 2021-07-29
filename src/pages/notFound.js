@@ -50,7 +50,7 @@ const Page = styled.div `
         }
 
         P {
-            width: 54%;
+            width: ${({primary}) => (primary === "tru" ? '100% !important' : '50%')};
             color: #fff;
             font-size: 1.2em;
             margin: 0 0 2em;
@@ -61,7 +61,7 @@ const Page = styled.div `
 `
 
 const Btn = styled(Link) `
-    background: rgba(17, 19, 83, 0.7);
+    background: ${({primary}) => (primary ? 'rgba(17, 19, 83, 0.7)' : '')};;
     border-radius: 7.37742px;
     color: #fff;
     padding: 15px;
@@ -73,20 +73,24 @@ const Btn = styled(Link) `
 
 `
 
-export default function NotFound(props) {
+export default function NotFound({title}) {
+    console.log(title);
     return (
         <Section>
             <Layer>
-                {props.title ? <h1>404 No {props.title} Found</h1> 
-                
-                
+                {title ?
+                    <Page>
+                        <h1>404</h1>
+                        <p style={{width: '100%'}}>Sorry,  No {title} Found 
+                        </p>
+                        <Btn to="/" primary="true">back to home</Btn>
+                    </Page> 
                 : 
                     <Page>
                         <h1>404</h1>
                         <p>Sorry, we can not  find the page you are looking for. Try again later
                         </p>
-                        
-                        <Btn to="/">back to home</Btn>
+                        <Btn to="/" primary="true">back to home</Btn>
                     </Page> 
                 }
             </Layer>

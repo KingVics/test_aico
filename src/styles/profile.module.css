@@ -11,24 +11,73 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
 
-.profileHeader > div:first-child {
-    position: relative;
-    top: 80px;
-    left: 130px;
+@media screen and (max-width: 1100px) {
+    .profileHeader {
+        padding: 0 7em;
+    }
+    
 }
+
+
 
 .profileHeader > div:first-child img {
     width: 350px;
 }
 
-.profileAddress {
+.profileAddres {
     flex: 1;
     display: flex;
-    justify-content: inherit;
+    justify-content: space-evenly;
+    align-items: baseline;
     color: #fff;
 
+}
+
+.profileSocials {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 850px) {
+    .profileHeader {
+        padding: 2em 4em;
+        display: block;
+        height: auto;
+        text-align: center;
+    }
+    .profileAddres {
+        display: block;
+        margin: 1em 0;
+    }
+
+    .profileSocials {
+        display: inline-block;
+    }
+
+    .profileHeader > div:first-child img {
+        width: 70%;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    .profileHeader {
+        padding: 2em;
+        display: block;
+        height: auto;
+        text-align: center;
+    }
+    .profileHeader > div:first-child img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+.profileSocials p {
+    margin: 0;
 }
 
 .profileAddress p {
@@ -39,3 +88,13 @@
     margin: 12rem 8rem 3rem
 }
 
+@media screen and (max-width: 1024px) {
+    .profileHeader {
+        padding: 2em;
+    }
+
+    .profileBio {
+        margin: 2em;
+    }
+    
+}

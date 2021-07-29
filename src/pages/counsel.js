@@ -20,7 +20,7 @@ function Counsel() {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 5000)
+    }, 2000)
 
 
     
@@ -38,13 +38,6 @@ function Counsel() {
         history.push('/trainees')
     }
 
-    if(!counsel) {
-        return (
-            <NotFound 
-                title="Counsel"
-            />
-        )
-    }
     return (
         <div className={style.attorneyContainer}>
             <div className={style.buttonContainer}>
@@ -52,22 +45,26 @@ function Counsel() {
                 <button>counsel</button>
                 <button onClick={pushPageTraineee}>trainees</button>
             </div>
-            <div className={style.attorneyCardContainer}>
+            <div className={counsel ? `${style.attorneyCardContainer}` : ''}>
                 {isLoading? 
                 <Loader />
                 : 
-                <Row>
-                    {counsel.map((item) => (
-                        <CounselsCard 
-                            pic_url={item.pic_url}
-                            name={item.name}
-                            biography={item.biography}
-                            key={item.counsel_id}
-                            id={item.counsel_id}
-                        />
+                    <>
+                        {!counsel ? <NotFound  title="Counsels"/> : 
+                            <Row>
+                                {counsel?.map((item) => (
+                                    <CounselsCard 
+                                        pic_url={item.pic_url}
+                                        name={item.name}
+                                        biography={item.biography}
+                                        key={item.partner_id}
+                                        id={item.partner_id}
+                                    />
 
-                    ))}
-                </Row>
+                                ))}
+                            </Row>
+                        }
+                    </>
                 }
                 
             </div>

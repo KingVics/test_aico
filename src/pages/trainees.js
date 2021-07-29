@@ -22,7 +22,7 @@ export default function Trainees() {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 5000)
+    }, 2000)
 
     useEffect(() => {
         dispatch(fetchTrainees())
@@ -52,21 +52,26 @@ export default function Trainees() {
                     <button onClick={pushPage}>counsel</button>
                     <button>trainees</button>
             </div>
-            <div className={style.attorneyCardContainer}>
+            <div className={counsel ? `${style.attorneyCardContainer}` : ''}>
                 {isLoading? 
                     <Loader />
                 : 
-                <Row>
-                    {counsel.map((item) => (
-                        <CounselsCard 
-                            pic_url={item.pic_url}
-                            name={item.name}
-                            biography={item.biography}
-                            key={item.id}
-                        />
-                    ))
-                    }
-                </Row>
+                    <>
+                        {!counsel ? <NotFound  title="Trainees"/> : 
+                            <Row>
+                                {counsel?.map((item) => (
+                                    <CounselsCard 
+                                        pic_url={item.pic_url}
+                                        name={item.name}
+                                        biography={item.biography}
+                                        key={item.partner_id}
+                                        id={item.partner_id}
+                                    />
+
+                                ))}
+                            </Row>
+                        }
+                    </>
                 }
                 
             </div>
