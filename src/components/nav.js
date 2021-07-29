@@ -124,7 +124,9 @@ const Nav = ({ toggle}) => {
     }, [location.pathname])
 
     useEffect(() => {
-        if(location.pathname === "/aviation" || location.pathname === "/litigation" ) {
+        if(location.pathname === "/aviation" || location.pathname === "/litigation"  || location.pathname === "/labour_law" 
+        || location.pathname === "/insurance" || location.pathname === "/foreign_investments" || location.pathname === "/intellectualproperty" 
+        || location.pathname === "/taxation" || location.pathname === "/telecommunication_law") {
             setPracticeActive(true)
             setCounselActive(false)
             setContactActive(false)
@@ -138,6 +140,18 @@ const Nav = ({ toggle}) => {
     useEffect(() => {
         if(location.pathname === "/publications" || location.pathname === "/news" ) {
             setPracticeActive(true)
+            setCounselActive(false)
+            setContactActive(false)
+            setAboutActive(false)
+            setActive(false)
+            setEventActive(false)
+        }
+
+    }, [location.pathname])
+
+    useEffect(() => {
+        if(location.pathname === "/profile/:id"  ) {
+            setPracticeActive(false)
             setCounselActive(false)
             setContactActive(false)
             setAboutActive(false)
@@ -239,7 +253,6 @@ const Nav = ({ toggle}) => {
             </ul>
             <div className={ notHome ? ` ${style.hamburgerMenu} ${style.linkChange} `: checkScroll ? `${style.activeScollLink}  ${style.hamburgerMenu}` : `${style.hamburgerMenu} `}>
                 <MenuBars onClick={toggle} />
-                {/* <Drawer open={open} handleOpe={handleOpen} setOpen={setOpen} right customBurgerIcon={<VscListFlat /> } width={ '80%' } pageWrapId={ "pageWrap" } outerContainerId={ "outer-container" } /> */}
             </div>
         </nav>
     )

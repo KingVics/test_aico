@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Row, Col, Tab, Nav} from "react-bootstrap"
 import {FiTwitter, BsEnvelope, FiLinkedin, FiFacebook} from "react-icons/all"
 import styled, {css} from "styled-components/macro"
 import styles from "../../styles/profile.module.css"
+import Aos from "aos"
+import "aos/dist/aos.css"
 
 import {Partner} from "../../data/partner"
 
@@ -40,6 +42,9 @@ const ImageWrapper = styled.div `
 export default function Profile(props) {
 
     // const data = JSON.parse(localStorage.getItem('profile'))
+    useEffect(() => {
+        Aos.init({duration: 3000})
+    },[])
 
     return (
         <section className={styles.profileSection}>
@@ -48,7 +53,7 @@ export default function Profile(props) {
                     <>
                     <div className={styles.profileHeader}>
                         <ImageWrapper>
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt=""   data-aos="zoom-in-right"/>
                         </ImageWrapper>
                         <div className={styles.profileAddres}>
                             <div>
@@ -94,7 +99,7 @@ export default function Profile(props) {
                         <Col sm={9}>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <div>
+                                    <div data-aos="slide-left" >
                                         <Para>
                                             {item.bioOne}
                                         </Para>
@@ -107,7 +112,7 @@ export default function Profile(props) {
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second">
-                                    <div>
+                                    <div data-aos="slide-left" >
                                         <Para>
                                             {item.bioOne}
                                         </Para>
@@ -115,7 +120,7 @@ export default function Profile(props) {
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
-                                    <div>
+                                    <div data-aos="slide-left" >
                                         <Para>
                                             {item.bioOne}
                                         </Para>
@@ -123,7 +128,7 @@ export default function Profile(props) {
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="four">
-                                    <div>
+                                    <div data-aos="slide-left" >
                                         <Para>
                                             {item.bioOne}
                                         </Para>
@@ -131,7 +136,7 @@ export default function Profile(props) {
                                     </div>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="five">
-                                    <div>
+                                    <div data-aos="slide-left" >
                                         <p>
                                             {item.bioOne}
                                         </p>
