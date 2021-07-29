@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import {Link} from "react-router-dom"
 import styled from "styled-components"
 import styles from "../styles/news.module.css"
+import {Row, Col} from "react-bootstrap"
 
 
-import {Publication} from "../data/publication"
+import {Newss, Publicationss} from "../data/publication"
 import SelectInput from '../components/selectInput'
 
 const Section = styled.section `
@@ -169,7 +170,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
     
     console.log(active);
     const handleShowNews = (id) => {
-        const newA = Publication?.find(i => i.id === id)
+        const newA = Newss?.find(i => i.id === id)
         setId(newA)
         if(newA?.id === id) {
             setShow(true) 
@@ -205,7 +206,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                     <ContentWrapper>
                     <h1>News</h1>
                     {
-                        Publication.map((item, index) => {
+                        Newss.map((item, index) => {
                             return (
         
                                 <NewsContent key={item.id}>
@@ -235,7 +236,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                 <ContentWrapper>
                 <h1>Publications</h1>
                 {
-                    Publication.map((item, index) => {
+                    Newss.map((item, index) => {
                         return (
     
                             <NewsContent key={item.id}>
@@ -271,7 +272,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                         <ContentWrapper>
                         <h1>News</h1>
                         {
-                            Publication.map((item, index) => {
+                            Newss.map((item, index) => {
                                 return (
             
                                     <NewsContent key={item.id}>
@@ -301,32 +302,26 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                 <NewsContainer>
                     {activeP && 
                         <ContentWrapper>
-                        <h1>Publications</h1>
-                        {
-                            Publication.map((item, index) => {
-                                return (
-            
-                                    <NewsContent key={item.id}>
-                                        <h2>{item.title}</h2>
-                                        <Blog style={{display: "flex"}}>
-                                            <div>
-                                                <p>{item.paraOne}</p>
-                                                <p>{item.paraTwo}</p>
-                                                <p>{item.paraThree} </p>
-                                                {show === true && ids?.id === item.id ?
-                                                    <p>{item.paraFour}</p>
-                                                    : ""
-                                                }
-                                                <Links to="#" onClick={() => handleShowNews(item.id)}>Read More</Links>
-                                            </div>
+                            <h1>Publication</h1>
+                            <Row>
+                            {
+                                Publicationss.map((item, index) => {
+                                    return (
+                                        <Col>
                                             <div>
                                                 <img src={item.image} alt="" />
+                                                <h2>{item.title}</h2>
+                                                <p>{item.paragraph}</p>
+                                                <p>{item.label}</p>
                                             </div>
-                                        </Blog>
-                                    </NewsContent>
-                                )
-                            } )
-                        }
+                                        </Col>
+                                    )
+
+                            })}
+                            </Row>
+                            
+                            
+                    
                         </ContentWrapper>
                     }
 

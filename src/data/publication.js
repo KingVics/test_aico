@@ -1,6 +1,7 @@
 import Image from "../images/news.png"
+import PubOne from "../images/pubOne.png"
 
-export const Publication = [
+export const Newss = [
     {
         title: "The Federal High Court has gone on a Sabbatical Break",
         paraOne: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices sodales magna sapien lobortis. Elit lacinia sit in ut porttitor dignissim et diam est. Viverra facilisis urna adipiscing eget egestas consectetur interdum.",
@@ -32,3 +33,37 @@ export const Publication = [
         id: 3
     },
 ]
+
+export const Publicationss = [
+    {
+        title: "Press 1",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
+        label: "Read More",
+        image: PubOne
+    },
+    {
+        title: "Press 2",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
+        label: "Read More",
+        image: PubOne
+    },
+    {
+        title: "Press 3",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
+        label: "Read More",
+        image: PubOne
+    },
+    {
+        title: "Press 4",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
+        label: "Read More",
+        image: PubOne
+    },
+    {
+        title: "Press 5",
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
+        label: "Read More",
+        image: PubOne
+    }
+
+] 

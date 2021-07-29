@@ -25,6 +25,7 @@ import PracticeAreaLitigation from "./pages/practiceArea"
 
 //Data
 import { PracticePath } from "./data/practiceAreaHome";
+import { Routes } from "./routes";
 import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
@@ -36,6 +37,9 @@ function App() {
   const [activeP, setActiveP] = useState(false)
   const  [formData, setFormData] = useState({event: "news"});
   const newPath = PracticePath.map((item) => item.path)
+  const newRoutes = Routes.map((item) => item.path)
+
+  console.log(newRoutes);
 
 
   const backToTop =() => {
@@ -95,37 +99,38 @@ function App() {
     setActiveP(false)
   }
 
-  
-
+  if(!newRoutes) {
+    return <NotFound/>
+  }
 
   return (
     <Router>
       <Nav toggle={toggle} />
       <Dropdown toggle={toggle} isOpen={isOpen}/>
-      <Switch>
-        <Scroll>
-          <div id="outer-container">
-            <main>
-              <Route exact path="/" component={() => <Home />}/>
-              <Route exact path="/counsel" component={() => <Counsel />}/>
-              <Route exact path="/partners" component={() => <Partners />}/>
-              <Route exact path="/trainees" component={() => <Trainees />}/>
-              <Route exact path="/contact" component={() => <Contact />}/>
-              <Route exact path="/about" component={() => <About />}/>
-              <Route exact path="/profile/:id" component={() => <Profile />}/>
-              <Route exact path={newPath} component={PracticeAreaLitigation } />
-              <Route exact path="/events" component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
-              <Route path='*' exact={true} component={NotFound} />
-              
-            </main>
-            <ScrollTop>
-                <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">
-                <KeyboardArrowUpIcon />
-                </Fab>
-            </ScrollTop> 
-          </div>
-        </Scroll>
-      </Switch>
+      <Scroll>
+        <Switch>
+          <Route exact path={newRoutes[0]} component={() => <Home />}/>
+          <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
+          <Route exact path={newRoutes[2]} component={() => <Partners />}/>
+          <Route exact path={newRoutes[3]} component={() => <Trainees />}/>
+          <Route exact path={newRoutes[4]} component={() => <Contact />}/>
+          <Route exact path={newRoutes[5]} component={() => <About />}/>
+          <Route exact path={newRoutes[6]} component={() => <Profile />}/>
+          <Route exact path={newPath} component={PracticeAreaLitigation } />
+          <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
+          <Redirect from="/home" to="/" />
+          <Route  component={NotFound} />  
+        </Switch>
+      </Scroll>
+      <ScrollTop>
+          <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">
+          <KeyboardArrowUpIcon />
+          </Fab>
+      </ScrollTop> 
+        
+        
+      
+      
       <Footer />
     </Router>
   );

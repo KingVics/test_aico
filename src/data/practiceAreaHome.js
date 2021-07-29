@@ -1,12 +1,12 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-import LitigationImage from "../images/litigation.png"
-import AviationImage from "../images/aviation.png"
-import LabourImage from "../images/labour.png"
-import InsuranceImage from "../images/insurance.png"
-import ForeignImage from "../images/foreign.png"
-import IntellectualImage from "../images/intellectual.png"
-import TaxationImage from "../images/taxation.png"
-import TelecomImage from "../images/telecom.png"
+import LitigationImage from "../images/com/litigation.png"
+import AviationImage from "../images/com/aviation.png"
+import LabourImage from "../images/com/labour.png"
+import InsuranceImage from "../images/com/insurance.png"
+import ForeignImage from "../images/com/foreign.png"
+import IntellectualImage from "../images/com/intellectual.png"
+import TaxationImage from "../images/com/taxation.png"
+import TelecomImage from "../images/com/telecom.png"
 
 
 export const PracticePath = [
