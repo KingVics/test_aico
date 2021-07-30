@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const url = "http://localhost:6060"
+const url = "https://rocky-shelf-24686.herokuapp.com"
 
 export const fetchCounsel = () => axios.get(`${url}/counsel`)
 export const fetchPartners = () => axios.get(`${url}/partners`)
