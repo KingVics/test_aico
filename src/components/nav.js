@@ -184,7 +184,7 @@ const Nav = ({ toggle}) => {
                 <li className={active ?  `${style.Active}` : ""}>
                     <Link to="/">Home</Link>
                 </li>
-                <li className={ checkScroll && aboutActive ?  ` ${style.ActiveOtherScroll}` : aboutActive ? `${style.ActiveOther}` : ""}>
+                <li className={checkScroll && aboutActive ?  ` ${style.ActiveOtherScroll}` : aboutActive ? `${style.ActiveOther}` : ""}>
                     <Link to="/about" >About us</Link>
                 </li>
                 <li style={{position: "relative"}}  className={checkScroll && counselActive ? ` ${style.ActiveOtherScroll}` : counselActive ? `${style.ActiveOther}` : "" } onMouseOver={checkCounsel} onMouseLeave={(item) => setIsCounsel(!item)}>
