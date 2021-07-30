@@ -31,6 +31,12 @@ const Wrapper = styled.div `
         line-height: 2;
         font-size: clamp(.8em, 6vw, 1em);
     }
+
+    @media screen and (max-width: 768px) {
+        img {
+            height: 100px;
+        }
+    }
 `
 
 const PracticeArea = () => {

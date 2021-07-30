@@ -210,8 +210,8 @@ function Contact () {
                                 multiline 
                             />
                         </div>
-                        <div>
-                            <Button type="submit">Submit now</Button>
+                        <div className={style.buttonWrapper}>
+                            <Button type="submit" primary>Submit now</Button>
                         </div> 
                     </form>
 

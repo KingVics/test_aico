@@ -143,6 +143,12 @@ const Blog = styled.div `
     }
 
     @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        div:first-child {
+            margin: 1em 0 0;
+        }
         div:last-child img {
             width: 100%;
         }
