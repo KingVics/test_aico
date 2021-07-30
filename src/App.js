@@ -39,9 +39,6 @@ function App() {
   const newPath = PracticePath.map((item) => item.path)
   const newRoutes = Routes.map((item) => item.path)
 
-  console.log(newRoutes);
-
-
   const backToTop =() => {
     window.scrollTo({
         top: 0,
@@ -99,9 +96,6 @@ function App() {
     setActiveP(false)
   }
 
-  if(!newRoutes) {
-    return <NotFound/>
-  }
 
   return (
     <Router>
@@ -111,7 +105,7 @@ function App() {
         <Switch>
           <Route exact path={newRoutes[0]} component={() => <Home />}/>
           <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
-          <Route exact path={newRoutes[2]} component={() => <Partners />}/>
+          <Route exact path={newRoutes[2]} component={() => <Partners/>} />
           <Route exact path={newRoutes[3]} component={() => <Trainees />}/>
           <Route exact path={newRoutes[4]} component={() => <Contact />}/>
           <Route exact path={newRoutes[5]} component={() => <About />}/>

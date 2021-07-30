@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import {useHistory} from "react-router-dom"
 import {Row} from "react-bootstrap"
 import{useDispatch, useSelector} from "react-redux"
 import style from "../styles/counsel.module.css"
@@ -11,11 +10,11 @@ import NotFound from "./notFound"
 //API
 import {fetchTrainees} from "../actions/request"
 import Loader from "../components/loader"
+import { Button } from '../components/Button'
 
 
 
 export default function Trainees() {
-    const history = useHistory();
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true)
     const counsel = useSelector((state) => state.counsel.data)
@@ -29,52 +28,44 @@ export default function Trainees() {
     }, [dispatch])
 
     
-    const pushPage = () => {
-        history.push('/counsel')
-    }
 
-    const pushPageTraineee = () => {
-        history.push('/partners')
-    }
-
-    if(!counsel) {
-        return (
-            <NotFound 
-                title="Trainee"
-            />
-        )
-    }
 
     return (
-        <div className={style.attorneyContainer}>
-            <div className={style.buttonContainer}>
-                    <button onClick={pushPageTraineee}>partners</button>
-                    <button onClick={pushPage}>counsel</button>
-                    <button>trainees</button>
-            </div>
-            <div className={counsel ? `${style.attorneyCardContainer}` : ''}>
+        <div className={counsel ? `${style.attorneyContainer}` : `${style.NoattorneyContainer}`}>
+            <div className={counsel ? `${style.attorneyCardContainer}` : `${style.NoattorneyCardContainer}`}>
                 {isLoading? 
                     <Loader />
                 : 
                     <>
                         {!counsel ? <NotFound  title="Trainees"/> : 
-                            <Row>
-                                {counsel?.map((item) => (
-                                    <CounselsCard 
-                                        pic_url={item.pic_url}
-                                        name={item.name}
-                                        biography={item.biography}
-                                        key={item.partner_id}
-                                        id={item.partner_id}
-                                    />
+                            <div>
+                                <div className={style.buttonContainer}>
+                                    <Button to="/partners">Partners</Button>
+                                    <Button to="/counsel">Counsel</Button>
+                                    <Button active="true">Trainees</Button>
+                                </div>
+                                <Row>
+                                    {counsel?.map((item) => (
+                                        <CounselsCard 
+                                            pic_url={item.pic_url}
+                                            name={item.name}
+                                            biography={item.biography}
+                                            key={item.partner_id}
+                                            id={item.partner_id}
+                                        />
 
-                                ))}
-                            </Row>
+                                    ))}
+                                </Row>
+                                
+                            </div>
+                            
                         }
                     </>
+                
                 }
                 
             </div>
         </div>
+        
     )
 }

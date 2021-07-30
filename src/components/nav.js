@@ -192,13 +192,13 @@ const Nav = ({ toggle}) => {
                     {isCounsel && 
                         <div className={checkScroll ? `${style.dropDown} ${style.dropDownScroll}` : `${style.dropDown}`} onClick={() => setIsCounsel(false)}>
                             <div>
-                                <Link to="/partners">Partner</Link>
+                                <Link to="/partners">Partners</Link>
                             </div>
                             <div>
                                 <Link to="/counsel">Counsel</Link>
                             </div>        
                             <div>
-                                <Link to="/trainees">Trainee</Link>
+                                <Link to="/trainees">Trainees</Link>
                             </div>
                         </div>
                     }

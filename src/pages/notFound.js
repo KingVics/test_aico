@@ -9,7 +9,7 @@ const Section = styled.section `
     position: relative;
     height: 100vh;
     background-image: url(${Image});
-    margin-top: 7em;
+    /* margin-top: 7em; */
     
 `
 
@@ -74,7 +74,6 @@ const Btn = styled(Link) `
 `
 
 export default function NotFound({title}) {
-    console.log(title);
     return (
         <Section>
             <Layer>

@@ -1,13 +1,24 @@
 .attorneyContainer {
     background: #FAFAF9;
     overflow: hidden;
+    margin-top: 11em;
+}
+
+.NoattorneyContainer {
+    background: #FAFAF9;
+    overflow: hidden;
+    margin-top: 0 !important;
+}
+
+.NoattorneyCardContainer {
+    height: 100vh;
 }
 
 .buttonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 3em;
+    margin: 3em 0;
 }
 
 .buttonContainer button {
@@ -84,34 +95,17 @@
 }
 
 
-
-
-/*.buttonContainer button + button {
-    /* border-left: var(--buttonBordersize) solid #AFAFAF; */
-    /* margin-left: calc(var(--buttonBordersize) * -1); */
-
-
-.buttonContainer button:hover,
-.buttonContainer button:focus {
-    width: 15%;
-    color: white;
-    outline: none;
-    text-shadow: none;
-    background-color: var(--buttonColor);
+@media screen and (max-width: 400px) {
+    .buttonContainer {
+        display: block;
+    }
 }
+@media screen and (max-width: 700px) {
+    .attorneyContainer {
+        margin-top: 0;
+    }
 
-.buttonContainer button:focus {
-    outline: var(--buttonBordersize) dashed #AFAFAF;
-    outline-offset: calc(var(--buttonBordersize) * -3);
-}
-
-.buttonContainer:hover button:focus:not(:hover) {
-    width: 15%;
-    color: var(--color-secondary);
-    background-color: var(--buttonColor);
-    outline-color: var(--color-tertiary);
-}
-
-.buttonContainer button:active {
-    transform: translateY(var(--buttonBordersize));
+    .attorneyCardContainer{
+        margin: 9em 0 4em;
+    }
 }

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import {useHistory} from "react-router-dom"
 import {Row} from "react-bootstrap"
 import{useDispatch, useSelector} from "react-redux"
 import style from "../styles/counsel.module.css"
@@ -12,11 +11,11 @@ import CounselsCard from "../components/counselsCard"
 import {fetchPartners} from "../actions/request"
 import Loader from "../components/loader"
 import NotFound from './notFound'
+import { Button } from '../components/Button'
 
 
 
 export default function Partners() {
-    const history = useHistory();
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(true)
     const counsel = useSelector((state) => state.counsel.data)
@@ -26,61 +25,39 @@ export default function Partners() {
     }, 2000)
 
     useEffect(() => {
-        let button = document.getElementById('partner')
-        if(window.location.pathname === '/partners') {
-            // button.style.backgroundColor = "#D9CB39"
-        }
-        else {
-            button.style.backgroundColor = "transparent"
-        }
-
         dispatch(fetchPartners())
-        
-    
     }, [dispatch])
 
-    
-
-    const pushPage = () => {
-        history.push('/counsel')
-    }
-
-    const pushPageTraineee = () => {
-        history.push('/trainees')
-    }
-
-    // if(!counsel) {
-    //     return (
-    //         <NotFound 
-    //             title="Partners"
-    //         />
-    //     )
-    // }
     return (
-        <div className={style.attorneyContainer}>
-            <div className={style.buttonContainer}>
-                    <button id="partner">partners</button>
-                    <button onClick={pushPage}>counsel</button>
-                    <button onClick={pushPageTraineee}>trainees</button>
-            </div>
-            <div className={counsel ? `${style.attorneyCardContainer}` : ''}>
+        <div className={counsel ? `${style.attorneyContainer}` : `${style.NoattorneyContainer}`}>
+            <div className={counsel ? `${style.attorneyCardContainer}` : `${style.NoattorneyCardContainer}`}>
                 {isLoading? 
                     <Loader />
                 : 
                     <>
                         {!counsel ? <NotFound  title="Partners"/> : 
-                            <Row>
-                                {counsel?.map((item) => (
-                                    <CounselsCard 
-                                        pic_url={item.pic_url}
-                                        name={item.name}
-                                        biography={item.biography}
-                                        key={item.partner_id}
-                                        id={item.partner_id}
-                                    />
+                            <div>
+                                <div className={style.buttonContainer}>
+                                    <Button active="true">Partners</Button>
+                                    <Button to="/counsel">Counsel</Button>
+                                    <Button to="/trainees">Trainees</Button>
 
-                                ))}
-                            </Row>
+                                </div>
+                                <Row>
+                                    {counsel?.map((item) => (
+                                        <CounselsCard 
+                                            pic_url={item.pic_url}
+                                            name={item.name}
+                                            biography={item.biography}
+                                            key={item.partner_id}
+                                            id={item.partner_id}
+                                        />
+
+                                    ))}
+                                </Row>
+                                
+                            </div>
+                            
                         }
                     </>
                 
