@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import {FaBars} from "react-icons/fa"
 
 import Logo from "../images/logorm.png"
+import {PubData} from "../data/publication"
 
 // import {VscListFlat} from  "react-icons/all"
 // import Drawer from "../components/drawer"
@@ -162,7 +163,7 @@ const Nav = ({ toggle}) => {
     }, [location.pathname])
 
     useEffect(() => {
-        if(location.pathname === "/events"  ) {
+        if(location.pathname === "/events" || location.pathname === `/events/publication/${PubData.title}` ) {
             setPracticeActive(false)
             setCounselActive(false)
             setContactActive(false)

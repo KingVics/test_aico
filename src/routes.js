@@ -23,4 +23,7 @@ export const Routes = [
     {
         path: "/events"
     },
+    {
+        path: "/events/publication/:id"
+    },
 ]

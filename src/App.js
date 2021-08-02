@@ -29,6 +29,7 @@ import { Routes } from "./routes";
 import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
+import Publication from "./pages/Publication";
 
 
 function App() {
@@ -112,6 +113,7 @@ function App() {
           <Route exact path={newRoutes[6]} component={() => <Profile />}/>
           <Route exact path={newPath} component={PracticeAreaLitigation } />
           <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
+          <Route exact path={newRoutes[8]} component={() => <Publication/>}/>
           <Redirect from="/home" to="/" />
           <Route  component={NotFound} />  
         </Switch>
