@@ -22,7 +22,7 @@ export default function Partners() {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 2000)
+    }, 5000)
 
     useEffect(() => {
         dispatch(fetchPartners())

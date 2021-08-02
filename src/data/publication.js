@@ -64,6 +64,7 @@ export const Publicationss = [
         paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis in sodales fringilla volutpat. Viverra vitae non risus nunc tempus sed erat",
         label: "Read More",
         image: PubOne
-    }
+    },
+    
 
 ] 

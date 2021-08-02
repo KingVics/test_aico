@@ -21,7 +21,7 @@ export default function Trainees() {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 2000)
+    }, 5000)
 
     useEffect(() => {
         dispatch(fetchTrainees())

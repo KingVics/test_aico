@@ -161,6 +161,18 @@ const Nav = ({ toggle}) => {
 
     }, [location.pathname])
 
+    useEffect(() => {
+        if(location.pathname === "/events"  ) {
+            setPracticeActive(false)
+            setCounselActive(false)
+            setContactActive(false)
+            setAboutActive(false)
+            setActive(false)
+            setEventActive(true)
+        }
+
+    }, [location.pathname])
+
 
     const checkOpen = (item) => {
         setIsOpen(item)

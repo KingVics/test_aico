@@ -19,7 +19,7 @@ function Counsel() {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 2000)
+    }, 5000)
 
 
     

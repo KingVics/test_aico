@@ -114,7 +114,7 @@
     top: 0px;
     background: #CD113B;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     padding: 2rem;
     color: #fff;
 }
@@ -127,7 +127,7 @@
     top: 0px;
     background: #FFC947;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     padding: 2rem;
     color: #fff;
 }
@@ -140,7 +140,7 @@
     top: 0px;
     background: #66DE93;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     padding: 2rem;
     color: #fff;
 }

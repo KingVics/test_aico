@@ -167,6 +167,33 @@ const Mobile = styled.div `
     }
 `
 
+const PublicationCard = styled.div `
+    background: #FFFFFF;
+    border-radius: 3.94839px;
+    box-shadow: 1px 1px 9px #ccc;
+
+    div {
+        padding: .7em
+    }
+
+    a {
+        color: #333 !important;
+    }
+
+    @media screen and (max-width:500px) {
+        h2 {
+            font-size: 1.3em !important;
+        }
+
+        p {
+            font-size: 11px;
+        }
+    }
+`
+
+const Img = styled.img `
+    width: 100%;
+`
 
 const News = ({active, activeP, showPublication, showNew, formData, setFormData}) => {
     const [show, setShow] = useState(false)
@@ -239,32 +266,27 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                         
                 : 
                 <ContentWrapper>
-                <h1>Publications</h1>
-                {
-                    Newss.map((item, index) => {
-                        return (
-    
-                            <NewsContent key={item.id}>
-                                <h2>{item.title}</h2>
-                                <Blog style={{display: "flex"}}>
-                                    <div>
-                                        <p>{item.paraOne}</p>
-                                        <p>{item.paraTwo}</p>
-                                        <p>{item.paraThree} </p>
-                                        {show === true && ids?.id === item.id ?
-                                            <p>{item.paraFour}</p>
-                                            : ""
-                                        }
-                                        <Links to="#" onClick={() => handleShowNews(item.id)}>Read More</Links>
-                                    </div>
-                                    <div>
-                                        <img src={item.image} alt="" />
-                                    </div>
-                                </Blog>
-                            </NewsContent>
-                        )
-                    } )
-                }
+                    <h1 style={{marginBottom: '1em'}}>Publication</h1>
+                            <Row>
+                            {
+                                Publicationss.map((item, index) => {
+                                    return (
+                                        <Col sm={6} lg={6} xl={4} style={{marginBottom: '3em'}}>
+                                            <PublicationCard>
+                                                <Img src={item.image} alt="" />
+                                                <div>
+                                                    <h2>{item.title}</h2>
+                                                    <p>{item.paragraph}</p>
+                                                    <Link>{item.label}</Link>
+                                                </div>
+                                            </PublicationCard>
+                                        </Col>
+                                    )
+
+                            })}
+                            </Row>
+                            
+        
                 </ContentWrapper>
                 
                 }
@@ -307,18 +329,20 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                 <NewsContainer>
                     {activeP && 
                         <ContentWrapper>
-                            <h1>Publication</h1>
+                            <h1 style={{marginBottom: '1em'}}>Publication</h1>
                             <Row>
                             {
                                 Publicationss.map((item, index) => {
                                     return (
-                                        <Col>
-                                            <div>
-                                                <img src={item.image} alt="" />
-                                                <h2>{item.title}</h2>
-                                                <p>{item.paragraph}</p>
-                                                <p>{item.label}</p>
-                                            </div>
+                                        <Col sm={6} lg={6} xl={4} style={{marginBottom: '3em'}}>
+                                            <PublicationCard>
+                                                <Img src={item.image} alt="" />
+                                                <div>
+                                                    <h2>{item.title}</h2>
+                                                    <p>{item.paragraph}</p>
+                                                    <Link>{item.label}</Link>
+                                                </div>
+                                            </PublicationCard>
                                         </Col>
                                     )
 
