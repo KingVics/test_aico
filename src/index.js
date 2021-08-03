@@ -4,6 +4,7 @@ import App from './App';
 import {Provider} from "react-redux"
 import {compose, applyMiddleware, createStore} from "redux"
 import thunk from "redux-thunk"
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -21,6 +22,8 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 
 
+
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
@@ -28,6 +31,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+serviceWorkerRegistration.unregister();
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
