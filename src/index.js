@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import ComingSoon from './ComingSoon';
+import ComingSoon from  './coming/ComingSoon';
 import {Provider} from "react-redux"
 import {compose, applyMiddleware, createStore} from "redux"
 import thunk from "redux-thunk"
