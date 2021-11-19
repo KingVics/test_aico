@@ -21,6 +21,7 @@ import Contact from "./pages/contactus"
 import About from "./pages/aboutus"
 import Profile from "./pages/Profile/profile"
 import PracticeAreaLitigation from "./pages/practiceArea"
+import comingsoon from "./coming/ComingSoon";
 
 
 //Data
@@ -30,6 +31,7 @@ import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
 import Publication from "./pages/Publication";
+import PdfReader from "./components/PdfReader";
 
 
 function App() {
@@ -113,7 +115,8 @@ function App() {
           <Route exact path={newRoutes[6]} component={() => <Profile />}/>
           <Route exact path={newPath} component={PracticeAreaLitigation } />
           <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
-          <Route exact path={newRoutes[8]} component={() => <Publication/>}/>
+          {/* <Route exact path={newRoutes[8]} component={() => <Publication/>}/> */}
+          <Route exact path={newRoutes[9]} component={PdfReader} />
           <Redirect from="/home" to="/" />
           <Route  component={NotFound} />  
         </Switch>
@@ -133,3 +136,4 @@ function App() {
 }
 
 export default App;
+

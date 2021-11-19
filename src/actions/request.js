@@ -28,10 +28,8 @@ export const fetchTrainees = () => async(dispatch) => {
         const {data} = await api.fetchTrainee()
 
         dispatch({type: 'FETCH_TRAINEES', payload: data});
-        console.log(data)
-        
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 }
 
@@ -39,7 +37,6 @@ export const submitForm = (post) => async(dispatch) => {
     try {
         const { data } = await api.submitForm(post) 
         dispatch({type: "SUBMIT_FORM", payload: data})
-        console.log(data);
     } catch (error) {
         console.log(error)
     }

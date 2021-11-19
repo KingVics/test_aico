@@ -340,7 +340,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                                                 <div>
                                                     <h2>{item.title}</h2>
                                                     <p>{item.paragraph}</p>
-                                                    <Link to={`/events/publication/${item.title}`}>{item.label}</Link>
+                                                    <Link to={`/events/publication/pdf`}>{item.label}</Link>
                                                 </div>
                                             </PublicationCard>
                                         </Col>

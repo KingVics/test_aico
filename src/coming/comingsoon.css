@@ -1,0 +1,34 @@
+.glow {
+    font-size: 6rem !important;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #10146B, 0 0 40px #10146B, 0 0 50px #10146B, 0 0 60px #10146B, 0 0 70px #10146B;
+}
+to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #D9CB39, 0 0 40px #D9CB39, 0 0 50px #D9CB39, 0 0 60px #D9CB39, 0 0 70px #D9CB39, 0 0 80px #D9CB39;
+}
+}
+
+.sub_glow {
+    margin-top: 2rem;
+    font-size: 1rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .sub_glow {
+        margin-top: 1rem;
+        font-size: .6rem !important;
+    }
+
+    .glow {
+        font-size: 3rem !important;
+    }
+}
+    

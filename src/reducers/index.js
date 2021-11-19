@@ -3,5 +3,4 @@ import counsel from "./counsel"
 
 export default combineReducers({
     counsel,
-
 })

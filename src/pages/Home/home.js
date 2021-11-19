@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {Row, Col} from "react-bootstrap"
 import {BsArrowRight} from "react-icons/bs"
 import style from "../../styles/home.module.css"
-import About from "../../../src/images/about.png"
+import About from "../../../src/images/about.jpg"
 import Aos from "aos"
 import "aos/dist/aos.css"
 
@@ -23,6 +23,7 @@ export default function Home(props) {
     useEffect(() => {
         Aos.init({duration: 3000})
     },[])
+    
 
     return (
         <div className={style.homeContainer} id="back-to-top-anchor" >
