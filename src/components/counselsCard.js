@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {Col} from "react-bootstrap"
 import styled from "styled-components"
+import LazyLoad from 'react-lazyload';
 import style from "../styles/counsel.module.css"
+
 
 //import axios from "axios"
 
@@ -45,12 +47,14 @@ export default function CounselsCard(props) {
     return (
         <Col  sm={6} md={6} lg={6} xl={4} key={props?.partner_id} style={{position: "unset"}}>
             <div className={style.attorneyCard}  key={props?.partner_id}>
-                <img src={props?.pic_url} alt="" />
-                <div>
+                <LazyLoad height="100%">
+                    <img src={props?.pic_url} alt="" />
+                </LazyLoad>
+                <div className={style.attorneyCardName}>
                     <h2>{props?.name}</h2>
                     <p>{props?.biography}</p>
                     {/* <button onClick={handleRoute}>View {props?.name.split(" ")[0]}'s profile</button> */}
-                    <Btn to='/profile/:id'>View {props?.name.split(" ")[0]}'s profile</Btn>
+                    <Btn to='/profile/:id'>View {props?.name?.split(" ")[0]}'s profile</Btn>
                 </div>
             </div>
         </Col>

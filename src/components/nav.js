@@ -8,8 +8,7 @@ import {FaBars} from "react-icons/fa"
 import Logo from "../images/logorm.png"
 import {PubData} from "../data/publication"
 
-// import {VscListFlat} from  "react-icons/all"
-// import Drawer from "../components/drawer"
+
 
 const MenuBars = styled(FaBars) `
     display:  none;
@@ -20,7 +19,7 @@ const MenuBars = styled(FaBars) `
         cursor: pointer;
         position: absolute;
         top: 25px;
-        right: 10px;
+        right: 25px;
         transform:  translate(-50%, 25%);
         color: ${({notHome}) => (notHome ? 'var(--textColor)': '')}
     }

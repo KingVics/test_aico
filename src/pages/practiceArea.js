@@ -74,9 +74,9 @@ const PracticeArea = () => {
                         <img src={Aviation.image} alt="" />
                     </div>
                     <div>
-                        <p>{Aviation.paragraphOne}</p>
-                        <p>{Aviation.paragraphTwo}</p>
-                        <p>{Aviation.paragraphThree}</p>
+                        <p data-aos="fade-left" data-aos-once="true" >{Aviation.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Aviation.paragraphTwo}</p>
+                        <p  data-aos="fade-left" data-aos-once="true">{Aviation.paragraphThree}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -91,10 +91,10 @@ const PracticeArea = () => {
                         <img src={Labour.image} alt="" />
                     </div>
                     <div>
-                        <p>{Labour.paragraphOne}</p>
-                        <p>{Labour.paragraphTwo}</p>
-                        <p>{Labour.paragraphThree}</p>
-                        <p>{Labour.paragraphFour}</p>
+                        <p  data-aos="fade-left" data-aos-once="true">{Labour.paragraphOne}</p>
+                        <p  data-aos="fade-right" data-aos-once="true">{Labour.paragraphTwo}</p>
+                        <p  data-aos="fade-left" data-aos-once="true">{Labour.paragraphThree}</p>
+                        <p  data-aos="fade-right" data-aos-once="true">{Labour.paragraphFour}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -109,10 +109,10 @@ const PracticeArea = () => {
                         <img src={Insurance.image} alt="" />
                     </div>
                     <div>
-                        <p>{Insurance.paragraphOne}</p>
-                        <p>{Insurance.paragraphTwo}</p>
-                        <p>{Insurance.paragraphThree}</p>
-                        <p>{Insurance.paragraphFour}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Insurance.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Insurance.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Insurance.paragraphThree}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Insurance.paragraphFour}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -128,17 +128,17 @@ const PracticeArea = () => {
                         <img src={Foreign.image} alt="" />
                     </div>
                     <div>
-                        <p>{Foreign.paragraphOne}</p>
-                        <p>{Foreign.paragraphTwo}</p>
-                        <p>{Foreign.paragraphThree}</p>
-                        <ul>
+                        <p  data-aos="fade-left" data-aos-once="true">{Foreign.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Foreign.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Foreign.paragraphThree}</p>
+                        <ul data-aos="fade-right" data-aos-once="true">
                             <li>{Foreign.pointOne}</li>
                             <li>{Foreign.pointTwo}</li>
                             <li>{Foreign.pointThree}</li>
                             <li>{Foreign.pointFour}</li>
                             <li>{Foreign.pointFive}</li>
                         </ul>
-                        <p>{Foreign.paragraphFour}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Foreign.paragraphFour}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -153,8 +153,8 @@ const PracticeArea = () => {
                         <img src={Intellectual.image} alt="" />
                     </div>
                     <div>
-                        <p>{Intellectual.paragraphOne}</p>
-                        <p>{Intellectual.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Intellectual.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Intellectual.paragraphTwo}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -169,16 +169,16 @@ const PracticeArea = () => {
                         <img src={Taxation.image} alt="" />
                     </div>
                     <div>
-                        <p>{Taxation.paragraphOne}</p>
-                        <p>{Taxation.paragraphTwo}</p>
-                        <p>{Taxation.paragraphThree}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Taxation.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Taxation.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Taxation.paragraphThree}</p>
                     </div>
                 </Wrapper>
             </Section>
         )
     }
 
-    if(location.pathname === '/telecommunication_law"') {
+    if(location.pathname === '/telecommunication_law') {
         return (
             <Section>
                 <Wrapper>
@@ -186,8 +186,8 @@ const PracticeArea = () => {
                         <img src={Telecomms.image} alt="" />
                     </div>
                     <div>
-                        <p>{Telecomms.paragraphOne}</p>
-                        <p>{Telecomms.paragraphTwo}</p>
+                        <p data-aos="fade-left" data-aos-once="true">{Telecomms.paragraphOne}</p>
+                        <p data-aos="fade-right" data-aos-once="true">{Telecomms.paragraphTwo}</p>
                     </div>
                 </Wrapper>
             </Section>
@@ -203,9 +203,9 @@ const PracticeArea = () => {
                     <img src={Aviation.image} alt="" />
                 </div>
                 <div>
-                    <p>{Aviation.paragraphOne}</p>
-                    <p>{Aviation.paragraphTwo}</p>
-                    <p>{Aviation.paragraphThree}</p>
+                    <p data-aos="fade-left" data-aos-once="true">{Aviation.paragraphOne}</p>
+                    <p data-aos="fade-right" data-aos-once="true">{Aviation.paragraphTwo}</p>
+                    <p data-aos="fade-left" data-aos-once="true">{Aviation.paragraphThree}</p>
                 </div>
             </Wrapper>
     </Section>

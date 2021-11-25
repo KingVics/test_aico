@@ -1,6 +1,7 @@
 import React from 'react'
 import {Carousel} from "react-bootstrap"
 
+
 // STYLE
 import style from "../styles/carousel.module.css"
 
@@ -17,8 +18,9 @@ export default function CardSlider() {
                         <img
                             className="d-block w-100"
                             src={item.image}
-                            alt="First slide"
+                            alt=""
                         />
+                        
                         <Carousel.Caption>
                             <h1 className="animate__animated animate__zoomIn">{item.context}</h1>
                             <p className="animate__animated animate__zoomIn">{item.text}</p>
@@ -27,7 +29,7 @@ export default function CardSlider() {
                     
                 ))}
             </Carousel>
-         </div>
+        </div>
         </div>
     )
 }

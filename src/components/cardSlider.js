@@ -9,13 +9,18 @@ const responsive = {
         slidesToSlide: 1// optional, default to 1.
     },
     tablet: {
-        breakpoint: { max: 1100, min: 601 },
-        items: 1,
+        breakpoint: { max: 1100, min: 769 },
+        items: 2,
+        slidesToSlide: 2// optional, default to 1.
+    },
+    medium: {
+        breakpoint: { max: 769, min: 560 },
+        items: 2,
         slidesToSlide: 1// optional, default to 1.
     },
     mobile: {
-        breakpoint: { max: 600, min: 0 },
-        items: 2,
+        breakpoint: { max: 559, min: 0 },
+        items: 1,
         slidesToSlide: 1 // optional, default to 1.
     }
 };
@@ -23,34 +28,34 @@ const responsive = {
 
 
 export default function CardSlider() {
-    const [custom, setCustom] = useState(true)
-    const mediaQuery = window.matchMedia('(max-width: 700px)')  
+    const [custom, setCustom] = useState(false)
+    const mediaQuery = window.matchMedia('(max-width: 768px)')  
 
     useEffect(() => {
         if (mediaQuery.matches) {
-            setCustom(false)
+            setCustom(true)
         }
 
         else {
-            setCustom(true)
+            setCustom(false)
         }
     }, [mediaQuery]);
     return (
         <>
             <Carousels
-                swipeable={true}
-                draggable={true}
+                // swipeable={true}
+                // draggable={true}
                 arrows={true}
                 showDots={false}
                 responsive={responsive}
-                centerMode={custom}
+                // centerMode={custom}
                 ssr={true}
                 infinite={true}
                 autoPlay={true}
                 autoPlaySpeed={10000}
                 keyBoardControl={true}
                 customTransition="transform 300ms ease-in-out"
-                transitionDuration={500}
+                transitionDuration={200}
                 containerClass="carousel-container"
                 removeArrowOnDeviceType={["tablet"]}
                 //deviceType={deviceType}

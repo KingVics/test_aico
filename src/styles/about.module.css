@@ -1,3 +1,13 @@
+.founderRow {
+    margin-top: 2em;
+}
+
+
+@media screen and (max-width: 575px) {
+    .founderRow {
+        margin-top: 0;
+    }
+}
 .aboutContainer img{
     width: 100%;
 }
@@ -13,9 +23,15 @@
     margin: 5rem 7rem;
 }
 
+.bestlawFirm img {
+    object-fit: cover;
+    height: 100%;
+}
+
 .bestlawFirm p {
     line-height: 1.8;
     white-space: normal;
+    text-align: justify;
 }
 .bestlawFirmP{
     margin: 2em 0;
@@ -25,9 +41,6 @@
     margin: 0 7em 5em;
 }
 
-.whyCol {
-    padding-left: 100px !important;
-}
 
 .whyCol > div {
     margin: 3em 0 0;
@@ -35,6 +48,12 @@
 
 .whychooseUs h3 {
     font-weight: 600;
+}
+
+.whyCol p {
+    line-height: 1.8;
+    width: 90%;
+    text-align: justify;
 }
 
 
@@ -48,6 +67,7 @@
 
 .meetheFounder img {
     width: 100%;
+    object-fit: contain;
 }
 
 .meetheFounder h2{
@@ -55,9 +75,11 @@
 }
 
 .meetheFounder p{
-    width: 80%;
+    /* width: 80%; */
     margin: 1em auto 0;
-    line-height: 2;
+    line-height: 2.5;
+    white-space: normal;
+    text-align: justify;
 }
 
 .meetheFounder button {
@@ -75,8 +97,9 @@
 }
 
 .founderCol > div {
-    width: 80%;
-    margin: 2em auto 0;
+    /* width: 80%;
+    margin: 2em auto 0; */
+    margin-top: 3em;
 }
 
 .needHelp{
@@ -103,6 +126,32 @@
     background: var(--buttonColor);
 } 
 
+.foundimageMobile {
+    display: none;
+}
+
+@media screen and (max-width: 1196px) {
+    .meetheFounder .largefounderimg {
+        width: 60%;
+        display: none;
+    }
+
+    .foundimageMobile {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 468px) {
+    .foundimageMobile img {
+        height: 380px;
+        object-fit: cover;
+    }
+
+    .whyCol h3 {
+        font-size: 1.2em!important;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .aboutImgDiv img {
@@ -129,12 +178,12 @@
         margin: 2rem;
     }
 
-    .whychooseUs img {
-        display: none;
-    }
-
     .whyCol {
         padding: 0 2em !important;
+    }
+
+    .whyCol p {
+        width: 100%;
     }
 
     .meetheFounder {
@@ -147,11 +196,7 @@
         line-height: 2;
     }
 
-    .meetheFounder div > div:first-child img {
-        width: 60%;
-        display: none;
-    }
-
+    
     .founderCol > div {
         width: 100%;
         text-align: center;
@@ -159,7 +204,7 @@
     }
 
     .founderCol div button {
-        width: 60%;
+        width: 100%;
     }
 
     .needHelp{

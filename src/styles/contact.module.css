@@ -2,8 +2,15 @@
     width: 100%;
     background-color: #fff;
     padding: 10rem 7rem 0;
-
 }
+
+@media screen and (max-width: 1024px) {
+    .contactUsContainer{
+        padding: 10rem 2rem 0;
+    }
+}
+    
+
 
 .contactUsContainer h1 {
     color: var(--textColor);
@@ -12,55 +19,49 @@
 }
 
 .adressContainer{
-    margin-top: 5rem;   
+    margin: 4em 0;
 }
 
-.adressContainer > div {
+.adressContainerRow {
+    height: 100%;
+}
+
+.adressContainerWrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
-.adressContainer h3 {
+.adressContainerWrapper h3 {
     color: var(--textColor);
     font-weight: 600;
+    margin-top: 2em;
 }
 
-.adressContainer p{
+.adressContainerWrapper p{
     font-size: 1em;
 }
 
 
-.lagosAddress {
-    position: relative;
-    bottom: -100px;
+@media screen and (max-width: 990px) {
+    .adressContainer {
+        height: 100%;
+        margin: 4rem 1rem;
+    }
 }
 
-.abujaAddress,
-.kadunaAddress {
-    margin-top: 45px;
+@media screen and (max-width: 600px) {
+    .adressContainerWrapper {
+        align-items: center;
+        text-align: center;
+    }
 }
 
-.abujaAddress p,
-.kadunaAddress p,
-.lagosAddress p {
-    color: var(--textColor);
-    font-weight: 500;
-
-}
-
-.abujaAddress p:nth-child(2),
-.kadunaAddress p:nth-child(2){
-    margin: 0;
-}
-
-.lagosAddressPhone {
-    margin: 0;
-}
 
 .contactForm {
-    margin: 4rem 0 6rem;
-    
+    margin: 1em 0 5em 0;
 }
 
 .contactCard {
@@ -70,17 +71,22 @@
     width: 70%;
 }
 
-
+@media screen and (max-width: 990px) {
+    .contactCard {
+        width: 100%;
+    }
+}
+    
 .contactForm h2 {
     color: var(--textColor);
-    padding-top: 1.5em;
+    margin-bottom: 1em;
 }
 
-.contactForm p {
+/* .contactForm p {
     color: rgba(51, 51, 51, 0.7);
     font-weight: 600;
     font-size: 1em
-}
+} */
 
 .contactForm form {
     padding: 4rem;
@@ -88,6 +94,10 @@
 
 .contactForm form  div {
     display: flex;
+}
+
+.contactForm form > div:nth-child(3) {
+    flex-direction: row-reverse;
 }
 
 .contactForm form div:first-child,
@@ -102,9 +112,8 @@
 }
 
 .contactFormMessage > div:last-child {
-    margin-left: 20px;
+    margin-right: 20px;
 }
-
 
 .formModalRed {
     position: fixed;
@@ -165,13 +174,13 @@
         display: block;
     }
 
-    .contactForm h2 {
-        font-size: 1.2em !important;
+    .contactForm h2,
+    .contactUsContainer h1 {
+        font-size: 2em !important;
     }
 
     .contactUsContainer h1 {
         text-align: center;
-        font-size: 1.3em !important;
     }
 
     .contactFormMessage > div:last-child {
@@ -182,23 +191,6 @@
         padding: 2em;
     }
 
-    .adressContainer {
-        text-align: center;
-        margin: 5em 2em 0;
-    }
-
-    .abujaAddress h3,
-    .lagosAddress h3,
-    .kadunaAddress h3 {
-        font-size: 1.1em !important;
-    }
-
-    .abujaAddress p,
-    .lagosAddress p,
-    .kadunaAddress p {
-        font-size: .9em;
-    }
-
     .contactForm {
         margin: 0rem 1em;
     }
@@ -207,18 +199,7 @@
         width: 100%;
     }
 
-    .lagosAddressCol {
-        margin-top: 3em;
-    }
-
-    .lagosAddress {
-        bottom: -25px;
-        margin: 0 2em;
-    }
-
-    .kadunaAddressCol {
-        margin: 4em 2em;
-    }
+    
 }
 
 .buttonWrapper  button{
@@ -226,3 +207,4 @@
     color: #fff;
     padding: 12px;
 }
+

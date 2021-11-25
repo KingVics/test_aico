@@ -1,14 +1,19 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state = [], action) => {
     switch (action.type) {
+        case 'SUCCESS':
+            return {loading: true, error: null, data: []};
+        case 'ERROR':
+            return {loading: false, error: action.payload, data: []};
         case "FETCH_COUNSEL":
-            return  action.payload;
-        case "FETCH_PARTNERS":
-            return action.payload;
-        case "FETCH_TRAINEES":
-            return action.payload;
+            return { loading: false, error: null, data: action.payload};
+            // return  action.payload;
+        // case "FETCH_PARTNERS":
+        //     return action.payload;
+        // case "FETCH_TRAINEES":
+        //     return action.payload;
         case 'SUBMIT_FORM':
-            return action.payload;
+            return { loading: false, error: null, data: action.payload};
         default:
             return state;
     }

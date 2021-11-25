@@ -17,11 +17,11 @@ import Home from "./pages/Home/home"
 import Counsel from "./pages/counsel"
 import Partners from "./pages/partners"
 import Trainees from "./pages/trainees"
-import Contact from "./pages/contactus"
-import About from "./pages/aboutus"
+import Contact from "./pages/Contact/ContactUs"
+import About from "./pages/About/Aboutus"
 import Profile from "./pages/Profile/profile"
 import PracticeAreaLitigation from "./pages/practiceArea"
-import comingsoon from "./coming/ComingSoon";
+
 
 
 //Data
@@ -30,7 +30,7 @@ import { Routes } from "./routes";
 import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
-import Publication from "./pages/Publication";
+// import Publication from "./pages/Publication";
 import PdfReader from "./components/PdfReader";
 
 

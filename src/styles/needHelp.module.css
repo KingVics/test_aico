@@ -1,0 +1,25 @@
+.InputFlex {
+    display: flex !important;
+    margin: 2em 0;
+}
+
+.inputInput {
+    width: 60%;
+}
+
+.InputText {
+    display: flex !important;
+    flex-direction: column-reverse;
+}
+
+.aboutModalAdjust {
+    margin-right: 1.5em;
+}
+
+.aboutModalAdjustDown {
+    margin-bottom: 1.7rem;
+}
+
+.aboutBtn {
+    margin: 1em 0;
+}
