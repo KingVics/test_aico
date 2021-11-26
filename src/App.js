@@ -110,6 +110,7 @@ function App() {
         <meta name="keywords" content="AICO Abdullahi Ibrahim & Co Abdullahi Ibrahim and Co aico" />
         <meta name="author" content="Abdullahi Ibrahim and Co AICO" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google-site-verification" content="IZon5cxoz9IdfEChfGWgNvxOTsgSvd2HQYAET6raxFw" />
       </Helmet>
       <Router>
         <Nav toggle={toggle} />
