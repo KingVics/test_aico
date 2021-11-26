@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom"
 import {Row} from "react-bootstrap"
 import{useDispatch, useSelector} from "react-redux"
 import style from "../styles/counsel.module.css"
+import {Helmet} from "react-helmet";
 
 
 //Component
@@ -31,6 +32,14 @@ export default function Partners() {
 
     return (
         <div className={data ? `${style.attorneyContainer}` : `${style.NoattorneyContainer}`}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>AICO</title>
+                <meta name="description" content="Abdullahi Ibrahim and Co Partners, Counsels and Trainee are trained with the right skills set to help in your cases." />
+                <meta name="keywords" content="Counsel Partner Trainee" />
+                <meta name="author" content="Abdullahi Ibrahim and Co(AICO)" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Helmet>
             <div className={data ? `${style.attorneyCardContainer}` : `${style.NoattorneyCardContainer}`}>
                 {loading? 
                     <Loader />
