@@ -103,37 +103,18 @@ function App() {
 
   return (
     <Router>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>AICO</title>
-        <meta name="description" content="The official website of Abdullahi Ibrahim & Co (AICO). At  Abdullahi Ibrahim & Co, we pride ourselves in our deep understanding of the law and experience in key industry sectors." />
-        <meta name="keywords" content="AICO  Abdullahi Ibrahim & Co  Abdullahi Ibrahim and Co" />
-        <meta name="author" content="Abdullahi Ibrahim and Co(AICO)" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* <link rel="canonical" href="https://aico.org/" />
-        <link rel="icon" href="https://aico.org/favicon.ico" />
-        <link rel="apple-touch-icon" href="https://aico.org/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="https://aico.org/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="https://aico.org/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="https://aico.org/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="https://aico.org/apple-touch-icon-180x180.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="https://aico.org/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://aico.org/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="https://aico.org/favicon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="https://aico.org/favicon-16x16.png" />
-        <link rel="manifest" href="https://aico.org/manifest.json" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-TileImage" content="https://aico.org/mstile-144x144.png" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="apple-mobile-web-app-title" content="AICO" />
-        <meta name="application-name" content="AICO" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> */}
-        </Helmet>
       <Nav toggle={toggle} />
       <Dropdown toggle={toggle} isOpen={isOpen}/>
       <Scroll>
         <Switch>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Abdullahi Ibrahim & Co..</title>
+            <meta name="description" content="The official website of Abdullahi Ibrahim & Co (AICO). At  Abdullahi Ibrahim & Co, we pride ourselves in our deep understanding of the law and experience in key industry sectors." />
+            <meta name="keywords" content="AICO Abdullahi Ibrahim & Co Abdullahi Ibrahim and Co aico" />
+            <meta name="author" content="Abdullahi Ibrahim and Co AICO" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          </Helmet>
           <Route exact path={newRoutes[0]} component={() => <Home />}/>
           <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
           <Route exact path={newRoutes[2]} component={() => <Partners/>} />
