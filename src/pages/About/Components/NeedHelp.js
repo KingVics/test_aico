@@ -4,10 +4,10 @@ import style from "../../../styles/about.module.css"
 const NeedHelp = ({setShowhelp}) => {
     return (
         <div className={style.needHelp}>
-            <div>
+            {/* <div>
                 <h3>Lorem ipsum dolor sit amet </h3>
                 <p>Lorem ipsum dolor sit amet </p>
-            </div>
+            </div> */}
             <div>
                 <h2>Need Help?</h2>
             </div>

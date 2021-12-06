@@ -27,11 +27,11 @@ const WhyContactUs = () => {
                         <Row className={style.founderRow}>
                             <Col  sm={6} md={6} lg={6} xl={6}>
                                 <h3>Our Resources and Reach</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu ornare et bibendum lacus eget.</p>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu ornare et bibendum lacus eget.</p> */}
                             </Col>
                             <Col  sm={6} md={6} lg={6} xl={6}>
                                 <h3>Trust and Confidentiality</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu ornare et bibendum lacus eget.</p>
+                                {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu ornare et bibendum lacus eget.</p> */}
                             </Col>
                         </Row>   
                     </div>

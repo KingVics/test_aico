@@ -26,7 +26,7 @@ const MeetTheFounder = ({setShow}) => {
                         </LazyLoad>
                     </div>
                     <div>
-                        <button onClick={() => setShow(true)}>View Abudlahi's Bio</button>
+                        <button onClick={() => setShow(true)}>View Bio</button>
                     </div>
                 </Col>  
             </Row>

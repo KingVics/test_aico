@@ -12,7 +12,7 @@ export default [
         id: 2,
         image: Image2,
         context: "Wealth of Experience",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+        text: ""
     },
     // {
     //     id: 3,

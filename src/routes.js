@@ -26,7 +26,4 @@ export const Routes = [
     {
         path: "/events/publication/:id"
     },
-    {
-        path: "/events/publication/pdf"
-    },
 ]

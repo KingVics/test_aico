@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
@@ -21,6 +21,7 @@ import Contact from "./pages/Contact/ContactUs"
 import About from "./pages/About/Aboutus"
 import Profile from "./pages/Profile/profile"
 import PracticeAreaLitigation from "./pages/practiceArea"
+import Publication from "./pages/Publication"
 
 
 
@@ -31,7 +32,7 @@ import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
 // import Publication from "./pages/Publication";
-import PdfReader from "./components/PdfReader";
+
 import {Helmet} from "react-helmet";
 
 
@@ -102,44 +103,44 @@ function App() {
 
 
   return (
-    <>
+    <Router>
       <Helmet>
-        <meta charSet="utf-8" />
-        <title>Abdullahi Ibrahim & Co..</title>
-        <meta name="description" content="The official website of Abdullahi Ibrahim & Co (AICO). At  Abdullahi Ibrahim & Co, we pride ourselves in our deep understanding of the law and experience in key industry sectors." />
-        <meta name="keywords" content="AICO Abdullahi Ibrahim & Co Abdullahi Ibrahim and Co aico" />
-        <meta name="author" content="Abdullahi Ibrahim and Co AICO" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-site-verification" content="IZon5cxoz9IdfEChfGWgNvxOTsgSvd2HQYAET6raxFw" />
+          <meta charSet="utf-8" />
+          <title>Abdullahi Ibrahim & Co..</title>
+          <meta name="description" content="The official website of Abdullahi Ibrahim & Co (AICO). At  Abdullahi Ibrahim & Co, we pride ourselves in our deep understanding of the law and experience in key industry sectors." />
+          <meta name="keywords" content="AICO Abdullahi Ibrahim & Co Abdullahi Ibrahim and Co aico" />
+          <meta name="author" content="Abdullahi Ibrahim and Co AICO" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="google-site-verification" content="IZon5cxoz9IdfEChfGWgNvxOTsgSvd2HQYAET6raxFw" />
       </Helmet>
-      <Router>
-        <Nav toggle={toggle} />
-        <Dropdown toggle={toggle} isOpen={isOpen}/>
-        <Scroll>
-          <Switch>
-            <Route exact path={newRoutes[0]} component={() => <Home />}/>
-            <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
-            <Route exact path={newRoutes[2]} component={() => <Partners/>} />
-            <Route exact path={newRoutes[3]} component={() => <Trainees />}/>
-            <Route exact path={newRoutes[4]} component={() => <Contact />}/>
-            <Route exact path={newRoutes[5]} component={() => <About />}/>
-            <Route exact path={newRoutes[6]} component={() => <Profile />}/>
-            <Route exact path={newPath} component={PracticeAreaLitigation } />
-            <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
-            {/* <Route exact path={newRoutes[8]} component={() => <Publication/>}/> */}
-            <Route exact path={newRoutes[9]} component={PdfReader} />
-            <Redirect from="/home" to="/" />
-            <Route  component={NotFound} />  
-          </Switch>
-        </Scroll>
-        <ScrollTop>
-            <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">
-            <KeyboardArrowUpIcon />
-            </Fab>
-        </ScrollTop> 
-        <Footer />
-      </Router>
-    </>
+      <Nav toggle={toggle} />
+      <Dropdown toggle={toggle} isOpen={isOpen}/>
+      <Scroll>
+        <Switch>
+          <Route exact path={newRoutes[0]} component={() => <Home />}/>
+          <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
+          <Route exact path={newRoutes[2]} component={() => <Partners/>} />
+          <Route exact path={newRoutes[3]} component={() => <Trainees />}/>
+          <Route exact path={newRoutes[4]} component={() => <Contact />}/>
+          <Route exact path={newRoutes[5]} component={() => <About />}/>
+          <Route exact path={newRoutes[6]} component={() => <Profile />}/>
+          <Route exact path={newPath} component={PracticeAreaLitigation } />
+          <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
+          <Route exact path={newRoutes[8]} component={() => <Publication/>}/>
+          <Route  component={NotFound} />  
+        </Switch>
+      </Scroll>
+      <ScrollTop>
+          <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">
+          <KeyboardArrowUpIcon />
+          </Fab>
+      </ScrollTop> 
+        
+        
+      
+      
+      <Footer />
+    </Router>
   );
 }
 

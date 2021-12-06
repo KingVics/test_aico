@@ -191,6 +191,9 @@ const PublicationCard = styled.div `
     }
 `
 
+const DesktopH2 = styled.h2 `
+    font-size: 1.3rem !important;
+`
 const Img = styled.img `
     width: 100%;
 `
@@ -200,7 +203,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
     const [mobile] = useState(formData.event)
     const [ids, setId] = useState()
     
-    console.log(active);
+    console.log(Publicationss.map((x) => x.id))
     const handleShowNews = (id) => {
         const newA = Newss?.find(i => i.id === id)
         setId(newA)
@@ -338,9 +341,9 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                                             <PublicationCard>
                                                 <Img src={item.image} alt="" />
                                                 <div>
-                                                    <h2>{item.title}</h2>
+                                                    <DesktopH2 style={{textTransform: 'capitalize', fontSize: '1.4rem !important'}}>{item.title}</DesktopH2>
                                                     <p>{item.paragraph}</p>
-                                                    <Link to={`/events/publication/pdf`}>{item.label}</Link>
+                                                    <Link to={`/events/publication/${item.id}`}>{item.label}</Link>
                                                 </div>
                                             </PublicationCard>
                                         </Col>

@@ -82,7 +82,7 @@ export default function Home(props) {
                                 </LazyLoad>
                             </div>
                             <div className={style.meetCounselBriefName}> 
-                                <h5>Adetunji Oyeyipo</h5>
+                                <h5>Adetunji Oyeyipo, SAN.</h5>
                                 <p>Partner</p>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ export default function Home(props) {
                                 </LazyLoad>
                             </div>
                             <div className={style.meetCounselBriefName}> 
-                                <h5>Olabisi Soyebo</h5>
+                                <h5>Olabisi Soyebo, SAN.</h5>
                                 <p>Partner</p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export default function Home(props) {
                                 </LazyLoad>
                             </div>
                             <div className={style.meetCounselBriefName}> 
-                                <h5>Rotimi Oguneso</h5>
+                                <h5>Rotimi Oguneso Esq, SAN.</h5>
                                 <p>Partner</p>
                             </div>
                         </div>
