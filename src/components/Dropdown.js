@@ -118,7 +118,7 @@ const SubDropMenuLinks = styled(Link) `
 const Dropdown = ({toggle, isOpen}) => {
     const [show, setShow] = useState(false)
     const [showP, setShowP] = useState(false)
-    const [openEvent, setOpenEvent] = useState(false)
+
 
 
     const mediaQuery = window.matchMedia('(max-width: 1024px)') 
@@ -136,14 +136,13 @@ const Dropdown = ({toggle, isOpen}) => {
         setShow(!show)
     }
     const handleP = () => setShowP(!showP)
-    const handleEvent = () => setOpenEvent(!openEvent)
 
     useEffect(() => {
         const checkState = () => {
             if(!isOpen) {
                 setShow(false)
                 setShowP(false)
-                setOpenEvent(false)
+                // setOpenEvent(false)
             }
         }
         return () => {
@@ -219,18 +218,6 @@ const Dropdown = ({toggle, isOpen}) => {
                     <li onClick={toggle}>
                         <DropMenuLinks to="/events">Event</DropMenuLinks>
                     </li>
-                    {/* {openEvent && 
-                        <SubDropdownMenu>
-                            <ul onClick={toggle}>
-                                <li>
-                                    <SubDropMenuLinks to="#">Publications</SubDropMenuLinks>
-                                </li>
-                                <li>
-                                    <SubDropMenuLinks to="#">News</SubDropMenuLinks>
-                                </li>
-                            </ul>        
-                        </SubDropdownMenu>
-                    } */}
                     <li onClick={toggle}>
                         <DropMenuLinks to="/contact">Contact Us</DropMenuLinks>
                     </li>

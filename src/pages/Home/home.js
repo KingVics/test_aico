@@ -42,9 +42,6 @@ export default function Home(props) {
                                 <p>
                                     We deliver solution driven services, and work in partnership with our clients to understand their needs and provide lasting solutions. Our vast knowledge in several sectors of law gives us an edge over our contemporaries. With four (4) of our partners being Senior Advocates of Nigeria, we have attained enviable professional heights in the legal profession. Our staff are well trained and work with the highest form of integrity and professionalism.
                                 </p>
-                                <p>
-                                    The Firm, Abdullahi Ibrahim & Co, has at its core the values of integrity and success, driven by honesty, professionalism, research and innovative approach to legal practice. The Firm has strong interests in advisory and advocacy services whilst boasting of seasoned and celebrated legal minds in the industry, and some of the best in modern commercial law practice including, Public Administrative Law, Alternative Dispute Resolution, Probate and Succession, Marine, Oil & Gas, Aviation, Stock Exchange, Telecommunications, Entertainment Law, Sports Law, Admiralty Law and Property Law.
-                                </p>
                             </div>
                         </Col>
                         <Col md={6} lg={6} xl={6}>
@@ -62,10 +59,8 @@ export default function Home(props) {
             <div className={style.ourPhilosophy}>
                 <div className={style.ourPhilosophyContent}>
                     <h2>Our Philosophy</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, tortor ut adipiscing tellus elementum lobortis. Risus iaculis ultrices id et rutrum feugiat. 
-                        Facilisis viverra ac morbi blandit leo, enim. Amet, ut nulla urna a tristique pretium nunc.
-                        Facilisis viverra ac morbi blandit leo, enim. Amet, ut nulla urna a tristique pretium nunc.
-                        Facilisis viverra ac morbi blandit leo, enim. Amet, ut nulla urna a tristique pretium nunc.
+                    <p>
+                        The Firm, Abdullahi Ibrahim & Co, has at its core the values of integrity and success, driven by honesty, professionalism, research and innovative approach to legal practice. The Firm has strong interests in advisory and advocacy services whilst boasting of seasoned and celebrated legal minds in the industry, and some of the best in modern commercial law practice including, Public Administrative Law, Alternative Dispute Resolution, Probate and Succession, Marine, Oil & Gas, Aviation, Stock Exchange, Telecommunications, Entertainment Law, Sports Law, Admiralty Law and Property Law.
                     </p>
                 </div>
             </div>

@@ -6,11 +6,13 @@ import Zoom from '@material-ui/core/Zoom';
 import { makeStyles } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
+
 //Components
 import Nav from "./components/nav"
 import Footer from "./components/footer";
 import Scroll from "./components/scroll"
 import Dropdown from './components/Dropdown';
+import ErrorBoundary from "./components/ErrorBoundary";
 
 //Pages
 import Home from "./pages/Home/home"
@@ -116,6 +118,7 @@ function App() {
       <Nav toggle={toggle} />
       <Dropdown toggle={toggle} isOpen={isOpen}/>
       <Scroll>
+        <ErrorBoundary>
         <Switch>
           <Route exact path={newRoutes[0]} component={() => <Home />}/>
           <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
@@ -129,6 +132,7 @@ function App() {
           <Route exact path={newRoutes[8]} component={() => <Publication/>}/>
           <Route  component={NotFound} />  
         </Switch>
+        </ErrorBoundary>
       </Scroll>
       <ScrollTop>
           <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">

@@ -47,19 +47,23 @@ export default function Partners() {
                 :
                     <div>
                         <div className={style.buttonContainer}>
-                            <Button active="true">Partners</Button>
+                            <Button active="true" to="#">Partners</Button>
                             <Button to="/counsel">Counsel</Button>
-                            <Button to="/trainees">Trainees</Button>
+                            {/* <Button to="/trainees">Trainees</Button> */}
 
                         </div>
                         <Row>
-                            {data?.map((item) => (
+                            {data?.map((item, i) => (
                                 <CounselsCard 
+                                    key={i}
                                     pic_url={item.pic_url}
-                                    name={item.name}
-                                    biography={item.biography}
-                                    key={item.partner_id}
+                                    firstname={item.firstname}
+                                    lastname={item.lastname}
+                                    title={item.title1}
+                                    title2={item.title2}
                                     id={item.partner_id}
+                                    path={path}
+                                    i={i}
                                 />
 
                             ))}

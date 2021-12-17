@@ -9,8 +9,8 @@ const Addresses = () => {
     return (
         <div className={style.adressContainer}>
             <Row className={style.adressContainerRow}>
-                {Address.map((item) => (
-                    <Col sm={6} md={6} lg={4} xl={4}  className={style.adressContainerRow}>
+                {Address.map((item, i) => (
+                    <Col sm={6} md={6} lg={4} xl={4}  className={style.adressContainerRow}  key={i}>
                         <div  key={item.id} className={style.adressContainerWrapper}>
                             {item.image}
                             <div >

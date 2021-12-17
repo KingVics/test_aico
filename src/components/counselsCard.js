@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import {Col} from "react-bootstrap"
 import styled from "styled-components"
 import LazyLoad from 'react-lazyload';
 import style from "../styles/counsel.module.css"
+import { fetchCounselProfile} from "../actions/request"
+import { useDispatch } from "react-redux"
 
 
 //import axios from "axios"
@@ -28,33 +30,28 @@ const Btn = styled(Link) `
 `
 
 export default function CounselsCard(props) {
-    // const history = useHistory()
-    // const id = props.id
+    const dispatch = useDispatch()
 
-    // const handleRoute = async() => {
-    //     try {
-    //         const {data} = await axios.get(`http://localhost:6060/partner-profile/${id}`)
-    //         const response  = await data.data[0];
-    //         localStorage.setItem('profile', JSON.stringify(response));
-    //         // history.push(`/profile/${props?.name}`)
-    //         history.push('/profile/:id')
-            
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-        
-    // }
+    const history = useHistory()
+
+
+    const handleProfile = (path, id) => {
+        dispatch(fetchCounselProfile(path, id))   //fetchCounsel()
+        history.push(`/profile/${props?.firstname}_${props?.lastname}`)
+
+    }
+
+
+
     return (
-        <Col  sm={6} md={6} lg={6} xl={4} key={props?.partner_id} style={{position: "unset"}}>
-            <div className={style.attorneyCard}  key={props?.partner_id}>
+        <Col  sm={6} md={6} lg={6} xl={4} key={props?.id} style={{position: "unset"}}>
+            <div className={style.attorneyCard} >
                 <LazyLoad height="100%">
                     <img src={props?.pic_url} alt="" />
                 </LazyLoad>
                 <div className={style.attorneyCardName}>
-                    <h2>{props?.name}</h2>
-                    <p>{props?.biography}</p>
-                    {/* <button onClick={handleRoute}>View {props?.name.split(" ")[0]}'s profile</button> */}
-                    <Btn to='/profile/:id'>View {props?.name?.split(" ")[0]}'s profile</Btn>
+                    <h2>{props?.firstname} {props?.lastname}{props?.title || props?.title2 ? ",": ''} {props?.title ? `${props?.title}., ` : ''} {props?.title2 ? `${props?.title2}` : ''}   </h2>
+                    <Btn onClick={() => handleProfile(props.path, props.id)} to="#">View {props?.firstname}'s profile</Btn>
                 </div>
             </div>
         </Col>

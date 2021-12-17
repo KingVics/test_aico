@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import styled from "styled-components/macro"
 import "../../src/App.css"
 
-import { Publicationss } from '../data/publication'
+
 
 const Section = styled.section `
     background: #fff;
@@ -15,7 +15,7 @@ const Wrapper  =  styled.div `
 
 const Publication = () => {
     const { id } = useParams()
-    console.log(id)
+    
     return (
         <Section>
             <Wrapper>

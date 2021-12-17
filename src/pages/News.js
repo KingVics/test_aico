@@ -203,7 +203,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
     const [mobile] = useState(formData.event)
     const [ids, setId] = useState()
     
-    console.log(Publicationss.map((x) => x.id))
+
     const handleShowNews = (id) => {
         const newA = Newss?.find(i => i.id === id)
         setId(newA)
@@ -215,13 +215,13 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
         }
 
     }
-    console.log(mobile);
+
     return (
         <Section>
             <Wrapper>
                 <BtnWrap>
-                    <Btn className={active && `${styles.Active}`} onClick={() => showNew()}>News</Btn>
-                    <Btn className={activeP && `${styles.Active}`} onClick={() => showPublication()}>Publications</Btn>
+                    <Btn className={active && `${styles.Active}`} onClick={() => showNew()} to="#">News</Btn>
+                    <Btn className={activeP && `${styles.Active}`} onClick={() => showPublication()}  to="#">Publications</Btn>
                     <div>
                         <SelectInput  
                             element="select" 
@@ -244,7 +244,7 @@ const News = ({active, activeP, showPublication, showNew, formData, setFormData}
                         Newss.map((item, index) => {
                             return (
         
-                                <NewsContent key={item.id}>
+                                <NewsContent key={index}>
                                     <h2>{item.title}</h2>
                                     <Blog>
                                         <div>

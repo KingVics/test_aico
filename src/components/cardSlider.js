@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Carousels from 'react-multi-carousel';
 import style from "../styles/home.module.css"
 
@@ -28,18 +28,18 @@ const responsive = {
 
 
 export default function CardSlider() {
-    const [custom, setCustom] = useState(false)
-    const mediaQuery = window.matchMedia('(max-width: 768px)')  
+    // const [custom, setCustom] = useState(false)
+    // const mediaQuery = window.matchMedia('(max-width: 768px)')  
 
-    useEffect(() => {
-        if (mediaQuery.matches) {
-            setCustom(true)
-        }
+    // useEffect(() => {
+    //     if (mediaQuery.matches) {
+    //         setCustom(true)
+    //     }
 
-        else {
-            setCustom(false)
-        }
-    }, [mediaQuery]);
+    //     else {
+    //         setCustom(false)
+    //     }
+    // }, [mediaQuery]);
     return (
         <>
             <Carousels

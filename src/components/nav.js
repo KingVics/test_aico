@@ -50,7 +50,6 @@ const Nav = ({ toggle}) => {
     const [eventActive, setEventActive] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
     const [isCounsel, setIsCounsel] = useState(false)
-    const [openEvent, setOpenEvent] = useState(false)
     const [checkScroll, setCheckScroll] = useState(false)
     
 
@@ -182,10 +181,7 @@ const Nav = ({ toggle}) => {
         setIsCounsel(item)
     }
 
-    const checkOpenEvent = (item) => {
-        setOpenEvent(item)
-    }
-
+    
 
 
     return (
@@ -254,18 +250,8 @@ const Nav = ({ toggle}) => {
                             </div>
                         }
                     </li>
-                    <li style={{position: "relative"}}   className={checkScroll && eventActive ? ` ${style.ActiveOtherScroll}` : eventActive ? `${style.ActiveOther}` : "" } onMouseOver={checkOpenEvent} onMouseLeave={(item) => setOpenEvent(!item)}>
+                    <li style={{position: "relative"}}   className={checkScroll && eventActive ? ` ${style.ActiveOtherScroll}` : eventActive ? `${style.ActiveOther}` : "" }>
                         <Link to="/events">events</Link>
-                        {/* {openEvent && 
-                            <div className={checkScroll ? `${style.dropDownEvent} ${style.dropDownScroll}` : `${style.dropDownEvent}`}>
-                                <div>
-                                    <Link to="/events">Publications</Link>
-                                </div>
-                                <div>
-                                    <Link to="/events">News</Link>
-                                </div>        
-                            </div>
-                        } */}
                     </li>
                     <li  className={checkScroll && contatcActive ? `${style.ActiveOtherScroll}` : contatcActive ?  `${style.ActiveOther}` : ""}>
                         <Link to="/contact">contact us</Link>

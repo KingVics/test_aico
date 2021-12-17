@@ -3,7 +3,7 @@ import  "../styles/modal.css"
 
 const ModalComponent = ({show, handleClose}) => {
     return (
-        <Modal show={show} onHide={handleClose} fullscreen={true} scrollable={true} size='xl'>
+        <Modal show={show} onHide={handleClose} fullscreen scrollable={true} size='xl'>
             <Modal.Header closeButton>
                 <Modal.Title>Alhaji Abdullahi Ibrahim Bio</Modal.Title>
             </Modal.Header>

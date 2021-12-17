@@ -29,6 +29,7 @@ function Counsel() {
         dispatch(fetchCounsel(path))   //fetchCounsel()
     }, [dispatch, path])
 
+
     
     if(!data){
         return  <NotFound  title="Counsel"/> 
@@ -52,17 +53,21 @@ function Counsel() {
                     <div>
                         <div className={style.buttonContainer}>
                             <Button to="/partners">Partners</Button>
-                            <Button  active="true">Counsel</Button>
-                            <Button to="/trainees">Trainees</Button>
+                            <Button to="#" active="true">Counsel</Button>
+                            {/* <Button to="/trainees">Trainees</Button> */}
                         </div>
                         <Row>
-                            {data?.map((item) => (
+                            {data?.map((item, i) => (
                                 <CounselsCard 
+                                    // id={i}    //id
+                                    key={i}
                                     pic_url={item.pic_url}
-                                    name={item.name}
-                                    biography={item.biography}
-                                    key={item.partner_id}
-                                    id={item.partner_id}
+                                    firstname={item.firstname}
+                                    lastname={item.lastname}
+                                    title={item.title1}
+                                    id={item.counsel_id}
+                                    path={path}
+                                    i={i}
                                 />
 
                             ))}

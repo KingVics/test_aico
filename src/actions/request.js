@@ -7,17 +7,16 @@ let counselCache = localforage.createInstance({
 });
 
 
-let partnerCache = localforage.createInstance({
-    name: "partners"
-});
+
 
 
 
 export const fetchCounsel = (counsel) => async(dispatch) => {
+
     dispatch({
         type: 'SUCCESS' //set loading to true at first instance
     });
-    console.log(window.location.pathname)
+
     const cached = window.location.pathname === "/counsel" ? await counselCache.getItem("counsels") : await counselCache.getItem("partners"); //getItem("counsels") stored in local storage
 
     if(cached){
@@ -26,20 +25,22 @@ export const fetchCounsel = (counsel) => async(dispatch) => {
 
         try {
             const {data} = await api.fetchCounsel(counsel)
+            console.log(data)
+
+            if(window.location.pathname === "/partners") {
+                await counselCache.setItem("partners", data.data)
+            } //setItem("counsels") stored in local storage
+            else{
+                console.log('I am here')
+                await counselCache.setItem("counsels", data.data)
+            } //setItem("partners") stored in local storage
+            
 
             dispatch({
                 type: 'FETCH_COUNSEL',
                 payload: data.data
             })
-            if(window.location.pathname === "/counsel") {
-                await counselCache.setItem("counsels", data.data)
-            } //setItem("counsels") stored in local storage
-            else if(window.location.pathname === "/partners") {
-                await partnerCache.setItem("partners", data.data)
-            } //setItem("partners") stored in local storage
-            else {
-                await counselCache.setItem("trainees", data.data)
-            }
+            
             
         } catch (error) {
             dispatch({
@@ -50,26 +51,38 @@ export const fetchCounsel = (counsel) => async(dispatch) => {
     }
 }
 
-export const fetchPartners = () => async(dispatch) => {
-    try {
-        const {data} = await api.fetchPartners()
 
-        dispatch({type: 'FETCH_PARTNERS', payload: data});
+
+export const fetchCounselProfile = (counsel, id) => async(dispatch) => {
+    const path = counsel === "/partners" ? "/partner" : counsel
+    dispatch({
+        type: 'LOADING' //set loading to true at first instance
+    });
+
+
+    try {
+
+        const { data } = await api.fetchProfile(path, id)
+
+        localStorage.setItem("profile", JSON.stringify(data.data[0])) //setItem("profile") stored in local storage
+
+        dispatch({
+            type: "FETCH_PROFILE",
+            payload: data?.data[0]
+        })
+        
+        
         
     } catch (error) {
-        console.log(error);
+        dispatch({
+            type: 'REJECTED',
+            payload: error.message //if error occurs, dispatch the error message to reducer
+        })
     }
+    
+    
 }
 
-export const fetchTrainees = () => async(dispatch) => {
-    try {
-        const {data} = await api.fetchTrainee()
-
-        dispatch({type: 'FETCH_TRAINEES', payload: data});
-    } catch (error) {
-        console.log(error.message);
-    }
-}
 
 export const submitForm = (formData, setMessage, setShowMessage) => async(dispatch) => {
     setMessage(null)

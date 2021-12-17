@@ -7,11 +7,6 @@ export default (state = [], action) => {
             return {loading: false, error: action.payload, data: []};
         case "FETCH_COUNSEL":
             return { loading: false, error: null, data: action.payload};
-            // return  action.payload;
-        // case "FETCH_PARTNERS":
-        //     return action.payload;
-        // case "FETCH_TRAINEES":
-        //     return action.payload;
         case 'SUBMIT_FORM':
             return { loading: false, error: null, data: action.payload};
         default:
