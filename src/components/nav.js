@@ -213,9 +213,9 @@ const Nav = ({ toggle}) => {
                                 <div>
                                     <Link to="/counsel">Counsel</Link>
                                 </div>        
-                                <div>
+                                {/* <div>
                                     <Link to="/trainees">Trainees</Link>
-                                </div>
+                                </div> */}
                             </div>
                         }
                     </li>
