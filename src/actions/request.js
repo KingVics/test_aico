@@ -1,10 +1,10 @@
 import * as api from "../api"
-import localforage from "localforage"
+// import localforage from "localforage"
 
 
-let counselCache = localforage.createInstance({
-    name: "counsels"
-});
+// let counselCache = localforage.createInstance({
+//     name: "counsels"
+// });
 
 
 
@@ -17,23 +17,22 @@ export const fetchCounsel = (counsel) => async(dispatch) => {
         type: 'SUCCESS' //set loading to true at first instance
     });
 
-    const cached = window.location.pathname === "/counsel" ? await counselCache.getItem("counsels") : await counselCache.getItem("partners"); //getItem("counsels") stored in local storage
+    // const cached = window.location.pathname === "/counsel" ? "counsel" : "partners"; //getItem("counsels") stored in local storage
 
-    if(cached){
-        dispatch({type: "FETCH_COUNSEL", payload: cached}) //dispatch the data from local storage to reducer
-    }else{
+    // if(cached){
+    //     dispatch({type: "FETCH_COUNSEL", payload: cached}) //dispatch the data from local storage to reducer
+    // }else{
 
         try {
             const {data} = await api.fetchCounsel(counsel)
-            console.log(data)
-
-            if(window.location.pathname === "/partners") {
-                await counselCache.setItem("partners", data.data)
-            } //setItem("counsels") stored in local storage
-            else{
-                console.log('I am here')
-                await counselCache.setItem("counsels", data.data)
-            } //setItem("partners") stored in local storage
+            
+            // if(window.location.pathname === "/partners") {
+            //     await counselCache.setItem("partners", data.data)
+            // } //setItem("counsels") stored in local storage
+            // else{
+            //     console.log('I am here')
+            //     await counselCache.setItem("counsels", data.data)
+            // } //setItem("partners") stored in local storage
             
 
             dispatch({
@@ -49,7 +48,7 @@ export const fetchCounsel = (counsel) => async(dispatch) => {
             })
         }
     }
-}
+
 
 
 

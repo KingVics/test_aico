@@ -64,10 +64,13 @@ function Counsel() {
                                     pic_url={item.pic_url}
                                     firstname={item.firstname}
                                     lastname={item.lastname}
-                                    title={item.title1}
+                                    title1={item.title1}
+                                    title2={item.title2}
+                                    title3={item.title3}
                                     id={item.counsel_id}
                                     path={path}
                                     i={i}
+                            
                                 />
 
                             ))}

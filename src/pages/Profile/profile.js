@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react'
-import { useSelector } from "react-redux"
+import { useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux"
 import {Row, Col, Tab, Nav} from "react-bootstrap"
 import {FiTwitter, BsEnvelope, FiLinkedin, FiFacebook} from "react-icons/all"
 import styled, {css} from "styled-components/macro"
 import styles from "../../styles/profile.module.css"
 import Loader from "../../components/loader"
+import { fetchCounselProfile} from "../../actions/request"
 import Aos from "aos"
 import ErrorBoundary from "../../components/ErrorBoundary"
 import "aos/dist/aos.css"
@@ -45,12 +47,22 @@ const ImageWrapper = styled.div `
 
 
 export default function Profile(props) {
+    const {id} = useParams()
+    const dispatch = useDispatch()
     const {isLoading, data} = useSelector((state) => state.profile)
+    const path = id?.split('&')[0]
+    const regex = /\d+/g
+    var matches = id?.match(regex); 
+    const newMatches = matches?.join("")
 
 
     useEffect(() => {
         Aos.init({duration: 3000})
     },[])
+
+    useEffect(() => {
+        dispatch(fetchCounselProfile(path, newMatches))
+    }, [])
 
 
 
@@ -72,7 +84,7 @@ export default function Profile(props) {
             ) : 
             data.map((item, index) => {
                 return (
-                    <>
+                    <div key={index}>
                         <div className={styles.profileHeader} key={index}>
                             <ImageWrapper>
                                 <img src={item?.picture} alt=""   data-aos="zoom-in-right"/>
@@ -150,7 +162,7 @@ export default function Profile(props) {
                         </Row>
                     </Tab.Container>
                 </div>
-            </>
+                    </div>
                 )
             
             })}

@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { Routes, Route} from 'react-router-dom'
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
@@ -10,7 +10,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 //Components
 import Nav from "./components/nav"
 import Footer from "./components/footer";
-import Scroll from "./components/scroll"
+//import Scroll from "./components/scroll"
 import Dropdown from './components/Dropdown';
 import ErrorBoundary from "./components/ErrorBoundary";
 
@@ -18,7 +18,6 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import Home from "./pages/Home/home"
 import Counsel from "./pages/counsel"
 import Partners from "./pages/partners"
-import Trainees from "./pages/trainees"
 import Contact from "./pages/Contact/ContactUs"
 import About from "./pages/About/Aboutus"
 import Profile from "./pages/Profile/profile"
@@ -28,8 +27,6 @@ import Publication from "./pages/Publication"
 
 
 //Data
-import { PracticePath } from "./data/practiceAreaHome";
-import { Routes } from "./routes";
 import './App.css';
 import News from "./pages/News";
 import NotFound from "./pages/notFound";
@@ -43,8 +40,7 @@ function App() {
   const [active, setActive] = useState(true)
   const [activeP, setActiveP] = useState(false)
   const  [formData, setFormData] = useState({event: "news"});
-  const newPath = PracticePath.map((item) => item.path)
-  const newRoutes = Routes.map((item) => item.path)
+  
 
   const backToTop =() => {
     window.scrollTo({
@@ -105,7 +101,7 @@ function App() {
 
 
   return (
-    <Router>
+    <>
       <Helmet>
           <meta charSet="utf-8" />
           <title>Abdullahi Ibrahim & Co..</title>
@@ -117,23 +113,32 @@ function App() {
       </Helmet>
       <Nav toggle={toggle} />
       <Dropdown toggle={toggle} isOpen={isOpen}/>
-      <Scroll>
+      {/* <Scroll> */}
         <ErrorBoundary>
-        <Switch>
-          <Route exact path={newRoutes[0]} component={() => <Home />}/>
-          <Route exact path={newRoutes[1]} component={() => <Counsel />}/>
-          <Route exact path={newRoutes[2]} component={() => <Partners/>} />
-          <Route exact path={newRoutes[3]} component={() => <Trainees />}/>
-          <Route exact path={newRoutes[4]} component={() => <Contact />}/>
-          <Route exact path={newRoutes[5]} component={() => <About />}/>
-          <Route exact path={newRoutes[6]} component={() => <Profile />}/>
-          <Route exact path={newPath} component={PracticeAreaLitigation } />
-          <Route exact path={newRoutes[7]} component={() => <News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } />
-          <Route exact path={newRoutes[8]} component={() => <Publication/>}/>
-          <Route  component={NotFound} />  
-        </Switch>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/counsel" element={<Counsel/>} />
+            <Route path="/partners" element={<Partners/>} />
+            {/* <Route exact path={newRoutes[2]} component={() => <Trainees />}/> */}
+            <Route path="/contact" element={<Contact/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/profile/:id" element={<Profile/>}/>
+            <Route path="" element={<PracticeAreaLitigation /> }>
+              <Route path="/litigation" element={<PracticeAreaLitigation /> } />
+              <Route path="/aviation" element={<PracticeAreaLitigation /> } />
+              <Route path="/labour_law" element={<PracticeAreaLitigation /> } />
+              <Route path="/insurance" element={<PracticeAreaLitigation /> } />
+              <Route path="/foreign_investments" element={<PracticeAreaLitigation /> } />
+              <Route path="/intellectualproperty" element={<PracticeAreaLitigation /> } />
+              <Route path="/taxation" element={<PracticeAreaLitigation /> } />
+              <Route path="/telecommunication_law" element={<PracticeAreaLitigation /> } />
+            </Route>
+            <Route path="/events" element={<News active={active} activeP={activeP} showPublication={showPublication} showNew={showNew} setFormData={setFormData} formData={formData}/>  } /> 
+            <Route path="/events/publication/:id" element={<Publication/>} />
+            <Route  path="*" element={<NotFound />} />   
+          </Routes>
         </ErrorBoundary>
-      </Scroll>
+      {/* </Scroll> */}
       <ScrollTop>
           <Fab color="secondary" size="small" aria-label="scroll back to top"  onClick={backToTop} className="fabr">
           <KeyboardArrowUpIcon />
@@ -144,7 +149,7 @@ function App() {
       
       
       <Footer />
-    </Router>
+    </>
   );
 }
 

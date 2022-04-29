@@ -8,9 +8,9 @@ export const Routes = [
     {
         path: "/partners"
     },
-    {
-        path: "/trainees"
-    },
+    // {
+    //     path: "/trainees"
+    // },
     {
         path: "/contact"
     },
@@ -18,7 +18,7 @@ export const Routes = [
         path: "/about"
     },
     {
-        path: "/profile/:id"
+        path: "/profile/:id&:name"
     },
     {
         path: "/events"

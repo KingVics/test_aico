@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {Col} from "react-bootstrap"
 import styled from "styled-components"
 import LazyLoad from 'react-lazyload';
 import style from "../styles/counsel.module.css"
-import { fetchCounselProfile} from "../actions/request"
-import { useDispatch } from "react-redux"
 
 
 //import axios from "axios"
@@ -29,31 +27,33 @@ const Btn = styled(Link) `
 
 `
 
-export default function CounselsCard(props) {
-    const dispatch = useDispatch()
-
-    const history = useHistory()
-
-
-    const handleProfile = (path, id) => {
-        dispatch(fetchCounselProfile(path, id))   //fetchCounsel()
-        history.push(`/profile/${props?.firstname}_${props?.lastname}`)
-
-    }
-
-
+export default function CounselsCard({firstname, lastname, pic_url, title1, title2, title3, path, id}) {
+    
 
     return (
-        <Col  sm={6} md={6} lg={6} xl={4} key={props?.id} style={{position: "unset"}}>
+        <Col  sm={6} md={6} lg={6} xl={4} key={id} style={{position: "unset"}}>
             <div className={style.attorneyCard} >
                 <LazyLoad height="100%">
-                    <img src={props?.pic_url} alt="" />
+                    <img src={pic_url} alt="" />
                 </LazyLoad>
                 <div className={style.attorneyCardName}>
-                    <h2>{props?.firstname} {props?.lastname}{props?.title || props?.title2 ? ",": ''} {props?.title ? `${props?.title}., ` : ''} {props?.title2 ? `${props?.title2}` : ''}   </h2>
-                    <Btn onClick={() => handleProfile(props.path, props.id)} to="#">View {props?.firstname}'s profile</Btn>
+                    <h2>{firstname} {lastname}{title1 || title2 ? ",": ''} {title1 ? `${title1}${title1 !== null && title2 !== null ?',' : ''}${title1 !== null && title3 !== null ?',' : ''} ` : ''}{title2 ? `${title2}${title2 !== null && title3 !== null ? ',' : ''}` : ''} {title3}   </h2>
+                    <Btn 
+                        to={`/profile${path}&${firstname} ${lastname}_${id}`} 
+                        state={
+                            { 
+                                id: id, 
+                                firstname: firstname, 
+                                lastname: lastname,
+                                path: path 
+                            }
+                        }>
+                            View {firstname}'s profile
+                    </Btn>
                 </div>
             </div>
         </Col>
     )
 }
+
+// nClick={() => handleProfile(path, id)} 
